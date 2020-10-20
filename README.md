@@ -48,4 +48,24 @@ Sample db.json file:
 }
 ```
 
+REST-call for entity employees:
+```
+localhost:3000/employees/
+```
 
+For insert use POST with JSON in body like:
+```
+{
+    "id": 5,
+    "first_name": "Test",
+    "last_name": "Eschweiler",
+    "email": "sebastian@codingthesmartway.com"
+}
+```
+
+For delete use the same call as a DELETE and append an id:
+```
+localhost:3000/employees/{id}
+```
+
+For select use the same an append an id if you only want one entry. If you want all entries, do not append an id.
