@@ -1,0 +1,13 @@
+Project setup procedure:
+1. Init
+	- 'ng new motorcycleGang'
+
+2. Add "https://material.angular.io/" to project:
+	- 'ng add @angular/material' 
+
+Database (JSON):
+
+
+
+
+
