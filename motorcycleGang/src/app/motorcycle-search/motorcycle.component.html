@@ -1,0 +1,97 @@
+<mat-card style="height: 100%">
+
+  <div style="display: flex; flex-direction: column; width: 30%">
+    <mat-form-field appearance="outline" color="accent">
+      <mat-label>Brand</mat-label>
+      <mat-placeholder>e.g. Yamaha</mat-placeholder>
+      <input matInput [(ngModel)]="brand" (keyup)="search()">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" color="accent">
+      <mat-label>Model</mat-label>
+      <mat-placeholder>MT 07</mat-placeholder>
+      <input matInput [(ngModel)]="model" (keyup)="search()">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" color="accent">
+      <mat-label>Horsepower</mat-label>
+      <mat-placeholder>76</mat-placeholder>
+      <input matInput [(ngModel)]="horsepower" (keyup)="search()">
+    </mat-form-field>
+
+    <div style="width: 100%">
+      <mat-label style="font-weight: bold;">
+        Horsepower
+      </mat-label>
+      <div style="width: 100%">
+        <mat-label style="width: 10%">
+          from {{horsepowerMin ? horsepowerMin + ' hp' : ''}}
+        </mat-label>
+        <mat-slider
+          style="width: 35%"
+          thumbLabel
+          label="Min Horspower"
+          [(ngModel)]="horsepowerMin"
+          tickInterval="1"
+          value="0"
+          min="1"
+          max="250"
+          (change)="search()">
+        </mat-slider>
+        <mat-label style="width: 10%">
+          to {{horsepowerMax ? horsepowerMax + ' hp' : ''}}
+        </mat-label>
+        <mat-slider
+          style="width: 35%"
+          thumbLabel
+          [(ngModel)]="horsepowerMax"
+          tickInterval="1"
+          value="250"
+          min="1"
+          max="250"
+          (change)="search()">
+        </mat-slider>
+      </div>
+    </div>
+
+    <mat-form-field appearance="outline" color="accent">
+      <mat-label>Color</mat-label>
+      <mat-placeholder>Black</mat-placeholder>
+      <input matInput [(ngModel)]="color" (keyup)="search()">
+    </mat-form-field>
+  </div>
+
+  <ng-container>
+    <mat-table [dataSource]="motorcycles" class="mat-elevation-z8" style="width: 100%; height: 100%">
+
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
+        <mat-cell *matCellDef="let motorcycle"> {{motorcycle.id}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="brand">
+        <mat-header-cell *matHeaderCellDef>Brand</mat-header-cell>
+        <mat-cell *matCellDef="let motorcycle"> {{motorcycle.brand}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="model">
+        <mat-header-cell *matHeaderCellDef>Model</mat-header-cell>
+        <mat-cell *matCellDef="let motorcycle"> {{motorcycle.model}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="horsepower">
+        <mat-header-cell *matHeaderCellDef>Horsepower</mat-header-cell>
+        <mat-cell *matCellDef="let motorcycle"> {{motorcycle.horsepower}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="color">
+        <mat-header-cell *matHeaderCellDef>Color</mat-header-cell>
+        <mat-cell *matCellDef="let motorcycle"> {{motorcycle.color}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+    </mat-table>
+  </ng-container>
+</mat-card>

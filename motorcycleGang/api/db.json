@@ -1,5 +1,18 @@
 {
   "motorcycles": [
-
+    {
+      "id": 1,
+      "brand": "Yamaha",
+      "model": "MT07",
+      "horsepower": 76,
+      "color": "Black"
+    },
+    {
+      "id": 2,
+      "brand": "Yamaha",
+      "model": "FZ06",
+      "horsepower": 96,
+      "color": "Silver"
+    }
   ]
 }
