@@ -1,96 +1,143 @@
-<mat-card style="height: 100%">
+<mat-card style="height: calc(100% - 32px)">
+  <div style="display: flex; flex-direction: row; width: 100%">
 
-  <div style="display: flex; flex-direction: column; width: 30%">
-    <mat-form-field appearance="outline" color="accent">
-      <mat-label>Brand</mat-label>
-      <mat-placeholder>e.g. Yamaha</mat-placeholder>
-      <input matInput [(ngModel)]="brand" (keyup)="search()">
-    </mat-form-field>
+    <div style="display: flex; flex-direction: column; width: 40%">
 
-    <mat-form-field appearance="outline" color="accent">
-      <mat-label>Model</mat-label>
-      <mat-placeholder>MT 07</mat-placeholder>
-      <input matInput [(ngModel)]="model" (keyup)="search()">
-    </mat-form-field>
+      <mat-form-field appearance="outline" color="accent">
+        <mat-label>Id</mat-label>
+        <mat-placeholder>e.g. 1</mat-placeholder>
+        <input matInput [(ngModel)]="id" disabled>
+      </mat-form-field>
 
-    <mat-form-field appearance="outline" color="accent">
-      <mat-label>Horsepower</mat-label>
-      <mat-placeholder>76</mat-placeholder>
-      <input matInput [(ngModel)]="horsepower" (keyup)="search()">
-    </mat-form-field>
+      <mat-form-field appearance="outline" color="accent">
+        <mat-label>Brand</mat-label>
+        <mat-placeholder>e.g. Yamaha</mat-placeholder>
+        <input matInput [(ngModel)]="brand" (keyup)="search()">
+      </mat-form-field>
 
-    <div style="width: 100%">
-      <mat-label style="font-weight: bold;">
-        Horsepower
-      </mat-label>
+      <mat-form-field appearance="outline" color="accent">
+        <mat-label>Model</mat-label>
+        <mat-placeholder>MT 07</mat-placeholder>
+        <input matInput [(ngModel)]="model" (keyup)="search()">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" color="accent">
+        <mat-label>Horsepower</mat-label>
+        <mat-placeholder>76</mat-placeholder>
+        <input matInput [(ngModel)]="horsepower" maxlength="3" (keyup)="search()">
+      </mat-form-field>
+
       <div style="width: 100%">
-        <mat-label style="width: 10%">
-          from {{horsepowerMin ? horsepowerMin + ' hp' : ''}}
+        <mat-label style="font-weight: bold;">
+          Horsepower
         </mat-label>
-        <mat-slider
-          style="width: 35%"
-          thumbLabel
-          label="Min Horspower"
-          [(ngModel)]="horsepowerMin"
-          tickInterval="1"
-          value="0"
-          min="1"
-          max="250"
-          (change)="search()">
-        </mat-slider>
-        <mat-label style="width: 10%">
-          to {{horsepowerMax ? horsepowerMax + ' hp' : ''}}
-        </mat-label>
-        <mat-slider
-          style="width: 35%"
-          thumbLabel
-          [(ngModel)]="horsepowerMax"
-          tickInterval="1"
-          value="250"
-          min="1"
-          max="250"
-          (change)="search()">
-        </mat-slider>
+        <div style="width: 100%">
+          <mat-label style="width: 10%">
+            from {{horsepowerMin ? horsepowerMin + ' hp' : ''}}
+          </mat-label>
+          <mat-slider
+            style="width: 35%"
+            thumbLabel
+            label="Min Horspower"
+            [(ngModel)]="horsepowerMin"
+            tickInterval="1"
+            value="0"
+            min="1"
+            max="250"
+            (change)="search()">
+          </mat-slider>
+          <mat-label style="width: 10%">
+            to {{horsepowerMax ? horsepowerMax + ' hp' : ''}}
+          </mat-label>
+          <mat-slider
+            style="width: 35%"
+            thumbLabel
+            [(ngModel)]="horsepowerMax"
+            tickInterval="1"
+            value="250"
+            min="1"
+            max="250"
+            (change)="search()">
+          </mat-slider>
+        </div>
       </div>
+
+      <mat-form-field appearance="outline" color="accent">
+        <mat-label>Color</mat-label>
+        <mat-placeholder>Black</mat-placeholder>
+        <input matInput [(ngModel)]="color" (keyup)="search()">
+      </mat-form-field>
     </div>
 
-    <mat-form-field appearance="outline" color="accent">
-      <mat-label>Color</mat-label>
-      <mat-placeholder>Black</mat-placeholder>
-      <input matInput [(ngModel)]="color" (keyup)="search()">
-    </mat-form-field>
+    <div style="width: 10%; align-self: flex-end">
+      <button
+        (click)="handleSave()"
+        mat-raised-button
+        color="primary"
+        style="align-self: flex-end; margin: 20px">{{id ? 'Change Me!' : 'Save Me!'}}
+      </button>
+    </div>
+
+    <div style="width: 50%;height: 50%">
+      <div style="padding-bottom:45%;position:relative; alignment: right">
+        <iframe src="https://giphy.com/embed/xUA7b521V2Mmsw0kfe" width="100%" height="100%" style="position:absolute"
+                frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+      </div>
+      <p><a href="https://giphy.com/gifs/simongibson2000-xUA7b521V2Mmsw0kfe" class="mat-tab-link">via GIPHY</a></p>
+    </div>
+
   </div>
 
   <ng-container>
-    <mat-table [dataSource]="motorcycles" class="mat-elevation-z8" style="width: 100%; height: 100%">
+    <mat-table
+      [dataSource]="datasource"
+      class="mat-elevation-z8 mat-table"
+      style="height: 50%; overflow: auto"
+      matSort>
 
       <ng-container matColumnDef="id">
-        <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
         <mat-cell *matCellDef="let motorcycle"> {{motorcycle.id}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="brand">
-        <mat-header-cell *matHeaderCellDef>Brand</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Brand</mat-header-cell>
         <mat-cell *matCellDef="let motorcycle"> {{motorcycle.brand}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="model">
-        <mat-header-cell *matHeaderCellDef>Model</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Model</mat-header-cell>
         <mat-cell *matCellDef="let motorcycle"> {{motorcycle.model}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="horsepower">
-        <mat-header-cell *matHeaderCellDef>Horsepower</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Horsepower</mat-header-cell>
         <mat-cell *matCellDef="let motorcycle"> {{motorcycle.horsepower}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="color">
-        <mat-header-cell *matHeaderCellDef>Color</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Color</mat-header-cell>
         <mat-cell *matCellDef="let motorcycle"> {{motorcycle.color}} </mat-cell>
       </ng-container>
 
-      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef style="visibility: hidden"> Delete</th>
+        <td mat-cell *matCellDef="let element">
+          <button
+            mat-icon-button
+            color="warn"
+            aria-label="delete"
+            (click)="deleteMotorcycleByIdEventHandler(element.id, $event)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"
+               (click)="select(row)"
+               [ngClass]="{'highlight': id == row.id}"
+      ></mat-row>
 
     </mat-table>
   </ng-container>

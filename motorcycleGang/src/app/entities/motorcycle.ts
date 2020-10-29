@@ -1,4 +1,4 @@
-export interface Motorcycle {
+export class Motorcycle {
 
   id: number;
   brand: string;

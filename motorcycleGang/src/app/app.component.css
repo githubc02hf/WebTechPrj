@@ -5,3 +5,15 @@
 .form-container > * {
   width: 100%;
 }
+
+.wrapper {
+  height: 100%;
+}
+
+.main-panel{
+  height: 100%;
+}
+
+.container-fluid{
+  height: 100%;
+}

@@ -4,15 +4,36 @@
       "id": 1,
       "brand": "Yamaha",
       "model": "MT07",
-      "horsepower": 76,
-      "color": "Black"
+      "color": "Black",
+      "horsepower": "76"
     },
     {
       "id": 2,
       "brand": "Yamaha",
       "model": "FZ06",
-      "horsepower": 96,
-      "color": "Silver"
+      "color": "Silver",
+      "horsepower": "98"
+    },
+    {
+      "id": 3,
+      "brand": "Kawasaki",
+      "model": "Ninja 300",
+      "color": "Green",
+      "horsepower": "35"
+    },
+    {
+      "id": 4,
+      "brand": "Yamaha",
+      "model": "XJ6",
+      "color": "White",
+      "horsepower": "76"
+    },
+    {
+      "id": 5,
+      "brand": "BMW",
+      "model": "G310",
+      "color": "Black",
+      "horsepower": "88"
     }
   ]
 }

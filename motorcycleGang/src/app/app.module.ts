@@ -16,6 +16,10 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSliderModule} from '@angular/material/slider';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatSortModule} from '@angular/material/sort';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   imports: [
@@ -32,7 +36,11 @@ import {MatSliderModule} from '@angular/material/slider';
     MatSelectModule,
     MatInputModule,
     MatButtonModule,
-    MatSliderModule
+    MatSliderModule,
+    MatIconModule,
+    MatDividerModule,
+    MatSortModule,
+    MatPaginatorModule
   ],
   declarations: [
     AppComponent,
