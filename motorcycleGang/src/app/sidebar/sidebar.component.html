@@ -1,0 +1,17 @@
+<mat-toolbar color="primary" style="height:100%;">
+  <mat-toolbar-row style="height:100%; display: flex; flex-direction: column">
+    <h1>Motorcycle Gmbh</h1>
+    <span class="menu-spacer"></span>
+    <div style="display: flex; flex-direction: column">
+      <a
+        mat-button
+        [routerLink]="'/home'"
+        class="button-overlay"> Home </a>
+      <a mat-button [routerLink]="'/motorcycles'"> Motorcycles </a>
+    </div>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row>
+    <span style="font-size: 10px; font-style: italic">Motorcycle Gmbh - Kauf deinen Traum</span>
+  </mat-toolbar-row>
+</mat-toolbar>
