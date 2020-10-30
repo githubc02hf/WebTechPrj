@@ -1,9 +1,19 @@
 <div class="wrapper">
 
   <div class="main-panel">
-
     <div class="container-fluid">
-      <app-motorcycle></app-motorcycle>
+
+      <mat-drawer-container class="mat-drawer-container" autosize>
+        <mat-drawer opened class="mat-drawer-side" mode="side">
+          <app-sidebar></app-sidebar>
+        </mat-drawer>
+
+        <div class="sidenav-content">
+          <router-outlet></router-outlet>
+        </div>
+
+      </mat-drawer-container>
+
 
     </div>
   </div>
