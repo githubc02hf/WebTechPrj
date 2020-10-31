@@ -111,6 +111,7 @@ export class MotorcycleComponent implements OnInit, AfterViewInit {
   }
 
   saveMotorcycle(apiUrl, headers, motorcycleToSave): void {
+    motorcycleToSave.horsepower = parseInt(motorcycleToSave.horsepower, 10);
     this.http
       .post<Motorcycle>(apiUrl, motorcycleToSave, {headers})
       .subscribe(
