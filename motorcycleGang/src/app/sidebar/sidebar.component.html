@@ -3,16 +3,24 @@
     <h1 style="padding: 5px"><strong>Motor</strong>cycle Gmbh</h1>
     <span class="menu-spacer"></span>
     <div style="display: flex; flex-direction: column; width: 100%; border: 5px">
-      <a
+      <button
         mat-button
         [routerLink]="'/home'"
+        routerLinkActive="active"
         class="button-toolbar"
-      > Home </a>
+      > Home </button>
       <a
         mat-button
         [routerLink]="'/motorcycles'"
+        routerLinkActive="active"
         class="button-toolbar"
       > Motorcycles </a>
+      <a
+        mat-button
+        [routerLink]="'/appointment'"
+        routerLinkActive="active"
+        class="button-toolbar"
+      >Appointment</a>
     </div>
   </mat-toolbar-row>
 
