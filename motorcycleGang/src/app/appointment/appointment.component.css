@@ -1,0 +1,19 @@
+.container {
+  margin: 25px 12.5% 0;
+  width: 75%; 
+}
+
+.card {
+  border: 3px solid;
+  border-radius: 5px;
+}
+
+.formField {
+  margin-left: 15px;
+  width: 85%;
+}
+
+h3 {
+  margin-top: 40px;
+  margin-left: 15px;
+}
