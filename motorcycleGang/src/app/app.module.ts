@@ -14,6 +14,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatNativeDateModule, MatOptionModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
+import {MatListModule} from '@angular/material/list'; 
 import {MatButtonModule} from '@angular/material/button';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatIconModule} from '@angular/material/icon';
@@ -29,6 +30,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 import { from } from 'rxjs';
+import { CustomerComponent } from './customer/customer.component';
 
 @NgModule({
   imports: [
@@ -55,14 +57,16 @@ import { from } from 'rxjs';
     MatToolbarModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatListModule
   ],
   declarations: [
     AppComponent,
     MotorcycleComponent,
     HomeComponent,
     SidebarComponent,
-    AppointmentComponent
+    AppointmentComponent,
+    CustomerComponent
   ],
   providers: [MatNativeDateModule],
   bootstrap: [AppComponent]

@@ -4,6 +4,7 @@ import {MotorcycleComponent} from './motorcycle-search/motorcycle.component';
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
 import { AppointmentComponent } from './appointment/appointment.component';
+import { CustomerComponent } from './customer/customer.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'appointment',
     component: AppointmentComponent
+  },
+  {
+    path: 'customer',
+    component: CustomerComponent
   },
   {
     path: '**',
