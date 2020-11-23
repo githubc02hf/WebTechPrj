@@ -5,6 +5,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {validateNumber} from '../../shared/validators/number-validator';
+import {MotorcycleService} from './motorcycle.service';
 
 @Component({
   selector: 'app-motorcycle',
@@ -24,7 +25,7 @@ export class MotorcycleComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private http: HttpClient, private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private motorcycleService: MotorcycleService) {
 
     this.datasource = new MatTableDataSource(this.motorcycles);
   }
@@ -52,10 +53,6 @@ export class MotorcycleComponent implements OnInit, AfterViewInit {
   }
 
   search(): void {
-    const apiUrl = 'http://localhost:3000/api/motorcycles/';
-
-    const headers = new HttpHeaders()
-      .set('Accept', 'application/json');
 
     let params = new HttpParams();
     if (this.registerForm) {
@@ -68,8 +65,8 @@ export class MotorcycleComponent implements OnInit, AfterViewInit {
         .set('color_like', this.registerForm.get('color').value ? this.registerForm.get('color').value : '');
     }
 
-    this.http
-      .get<Motorcycle[]>(apiUrl, {params, headers})
+    this.motorcycleService
+      .find(params)
       .subscribe(
         motorcycle => {
           this.motorcycles = motorcycle;
@@ -89,19 +86,13 @@ export class MotorcycleComponent implements OnInit, AfterViewInit {
       this.registerForm.get('horsepower').markAsTouched();
       this.registerForm.get('color').markAsTouched();
       return;
-    }else {
-      console.log('hier');
     }
-    const apiUrl = 'http://localhost:3000/api/motorcycles/';
-
-    const headers = new HttpHeaders()
-      .set('Accept', 'application/json');
 
     if (this.registerForm.get('id').value >= 1) {
       this.deleteMotorcycleById(this.registerForm.get('id').value);
     }
     const motorcycle = this.createNewMotorcycle();
-    this.saveMotorcycle(apiUrl, headers, motorcycle);
+    this.selectedMotorcycle = this.motorcycleService.save(motorcycle);
 
     if (this.registerForm.get('id').value === undefined) {
       this.unsetFields();
@@ -110,33 +101,10 @@ export class MotorcycleComponent implements OnInit, AfterViewInit {
 
   }
 
-  saveMotorcycle(apiUrl, headers, motorcycleToSave): void {
-    motorcycleToSave.horsepower = parseInt(motorcycleToSave.horsepower, 10);
-    this.http
-      .post<Motorcycle>(apiUrl, motorcycleToSave, {headers})
-      .subscribe(
-        motorcycle => {
-          this.selectedMotorcycle = motorcycle;
-        },
-        err => {
-          console.error('saving motorcycle failed', err);
-        }
-      );
-  }
-
   deleteMotorcycleById(id): void {
     this.unsetFields();
-    const apiUrl = 'http://localhost:3000/api/motorcycles/';
 
-    this.http
-      .delete(apiUrl + id)
-      .subscribe(
-        motorcycle => {
-        },
-        err => {
-          console.error('Could not delete motorcycle with id ' + this.selectedMotorcycle.id, err);
-        }
-      );
+    this.motorcycleService.deleteById(id);
 
     this.search();
 
