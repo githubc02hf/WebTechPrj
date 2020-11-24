@@ -5,5 +5,5 @@ export class Customer {
     gender: string;
     phoneNumber: number;
     email: string;
-    creationDate: Date;
+    dateOfBirth: string;
 }

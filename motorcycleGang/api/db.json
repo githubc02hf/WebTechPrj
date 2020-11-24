@@ -85,7 +85,7 @@
       "lastName": "Mustermann",
       "gender": "male",
       "email": "max.mustermann@gmail.com",
-      "phone": "004312345678"
+      "phoneNumber": "004312345678"
     },
     {
       "id": 2,
@@ -93,7 +93,7 @@
       "lastName": "Doe",
       "gender": "female",
       "email": "ja.doe@gmx.com",
-      "phone": "004988881111"
+      "phoneNumber": "004988881111"
     },
     {
       "id": 3,
@@ -101,7 +101,7 @@
       "lastName": "Doe",
       "gender": "male",
       "email": "jo.doe@web.de",
-      "phone": "12345582"
+      "phoneNumber": "12345582"
     },
     {
       "id": 4,
@@ -109,7 +109,7 @@
       "lastName": "lover",
       "gender": "other",
       "email": "bikeLover1337@gmail.com",
-      "phone": "004312345982"
+      "phoneNumber": "004312345982"
     }
   ]
 }
