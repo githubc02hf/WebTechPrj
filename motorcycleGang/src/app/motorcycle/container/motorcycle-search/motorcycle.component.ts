@@ -1,18 +1,16 @@
 import {Component, OnInit, ViewChild, AfterViewInit} from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {HttpParams} from '@angular/common/http';
 import {Motorcycle} from '../../../entities/motorcycle';
-import {MatTableDataSource} from '@angular/material/table';
-import {MatSort} from '@angular/material/sort';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {validateNumber} from '../../../shared/validators/number-validator';
 import {MotorcycleService} from '../../services/motorcycle.service';
+import {NumberValidatorDirective} from "../../../shared/validation/number-validator.directive";
 
 @Component({
   selector: 'app-motorcycle',
   templateUrl: './motorcycle.component.html'
 })
 
-export class MotorcycleComponent implements OnInit, AfterViewInit {
+export class MotorcycleComponent implements OnInit {
 
   // TODO Child-Compontent • Soll per Data-Binding Daten von Parent-Component erhalten und an diese senden
 
@@ -20,19 +18,10 @@ export class MotorcycleComponent implements OnInit, AfterViewInit {
   selectedMotorcycle: Motorcycle;
   displayedColumns: string[] = ['id', 'brand', 'model', 'horsepower', 'color', 'delete'];
   selectedId: -1;
-  datasource: MatTableDataSource<Motorcycle>;
   registerForm: FormGroup;
-
-  @ViewChild(MatSort) sort: MatSort;
 
   constructor(private formBuilder: FormBuilder, private motorcycleService: MotorcycleService) {
 
-    this.datasource = new MatTableDataSource(this.motorcycles);
-  }
-
-  // tslint:disable-next-line:typedef
-  ngAfterViewInit() {
-    this.datasource.sort = this.sort;
   }
 
   // tslint:disable-next-line:typedef
@@ -44,7 +33,7 @@ export class MotorcycleComponent implements OnInit, AfterViewInit {
       id: [{value: null, disabled: true}, {updateOn: 'change'}],
       brand: [null, {validators: [Validators.required], updateOn: 'change'}],
       model: [null, {validators: [Validators.required], updateOn: 'change'}],
-      horsepower: [null, {validators: [Validators.required, validateNumber], updateOn: 'change'}],
+      horsepower: [null, {validators: [Validators.required, new NumberValidatorDirective()], updateOn: 'change'}],
       horsepowerMin: [null, {updateOn: 'change'}],
       horsepowerMax: [null, {updateOn: 'change'}],
       color: [null, {validators: [Validators.required], updateOn: 'change'}],
@@ -70,8 +59,6 @@ export class MotorcycleComponent implements OnInit, AfterViewInit {
       .subscribe(
         motorcycle => {
           this.motorcycles = motorcycle;
-          this.datasource = new MatTableDataSource(this.motorcycles);
-          this.datasource.sort = this.sort;
         },
         err => {
           console.error('Error loading motorcycles', err);
@@ -88,9 +75,6 @@ export class MotorcycleComponent implements OnInit, AfterViewInit {
       return;
     }
 
-    if (this.registerForm.get('id').value >= 1) {
-      this.deleteMotorcycleById(this.registerForm.get('id').value);
-    }
     const motorcycle = this.createNewMotorcycle();
     this.selectedMotorcycle = this.motorcycleService.save(motorcycle);
 

@@ -1,9 +1,9 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {MotorcycleComponent} from './motorcycle/container/motorcycle-search/motorcycle.component';
-import {AppComponent} from './app.component';
 import {HomeComponent} from './core/home/home.component';
-import { AppointmentComponent } from './appointment/container/appointment-book/appointment.component';
+import {AppointmentComponent} from './appointment/container/appointment-book/appointment.component';
+import {MotorcycleComponent} from './motorcycle/container/motorcycle-search/motorcycle.component';
+import {MotorcycleEditComponent} from './motorcycle/container/motorcycle-edit/motorcycle-edit.component';
 
 const routes: Routes = [
   {
@@ -16,8 +16,22 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'motorcycles',
-    component: MotorcycleComponent
+    path: 'motorcycle',
+    children: [
+      {
+        path: '',
+        redirectTo: 'motorcycle-search',
+        pathMatch: 'full'
+      },
+      {
+        path: 'motorcycle-search',
+        component: MotorcycleComponent
+      },
+      {
+        path: 'motorcycle-edit/:id',
+        component: MotorcycleEditComponent
+      }
+    ]
   },
   {
     path: 'appointment',

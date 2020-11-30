@@ -27,8 +27,12 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {AppointmentComponent } from './appointment/container/appointment-book/appointment.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { from } from 'rxjs';
+import { MotorcycleCardComponent } from './motorcycle/components/motorcycle-card/motorcycle-card.component';
+import { MotorcycleEditComponent } from './motorcycle/container/motorcycle-edit/motorcycle-edit.component';
+import { NumberValidatorDirective } from './shared/validation/number-validator.directive';
 
 @NgModule({
   imports: [
@@ -55,14 +59,18 @@ import { from } from 'rxjs';
     MatToolbarModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    FlexLayoutModule
   ],
   declarations: [
     AppComponent,
     MotorcycleComponent,
     HomeComponent,
     SidebarComponent,
-    AppointmentComponent
+    AppointmentComponent,
+    MotorcycleCardComponent,
+    MotorcycleEditComponent,
+    NumberValidatorDirective
   ],
   providers: [MatNativeDateModule],
   bootstrap: [AppComponent]
