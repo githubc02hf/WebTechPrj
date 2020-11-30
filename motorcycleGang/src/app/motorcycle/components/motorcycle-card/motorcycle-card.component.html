@@ -1,0 +1,20 @@
+<mat-card
+  class="card mat-card"
+  (click)="selectMotorcycle()"
+  [ngStyle]="{'background-color': (selected) ? 'rgb(204, 197, 185)' : '' }">
+  <mat-card-header>
+    <mat-card-title style="font-size: 1.3vw;">{{motorcycle.brand}}</mat-card-title>
+    <mat-card-subtitle style="font-size: 0.9vw;">{{motorcycle.model}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content class="content">
+    <p>
+      ID: {{motorcycle.id}}
+    </p>
+    <p>
+      Horsepower: {{motorcycle.horsepower}}
+    </p>
+    <p>
+      <ng-content></ng-content>
+    </p>
+  </mat-card-content>
+</mat-card>
