@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {DefaultMotorcycleService} from './default-motorcycle.service';
 import {Observable} from 'rxjs';
-import {Motorcycle} from '../entities/motorcycle';
+import {Motorcycle} from '../../entities/motorcycle';
 
 @Injectable({
   providedIn: 'root',

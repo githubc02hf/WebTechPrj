@@ -1,11 +1,11 @@
 import {Component, OnInit, ViewChild, AfterViewInit} from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
-import {Motorcycle} from '../entities/motorcycle';
+import {Motorcycle} from '../../../entities/motorcycle';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {validateNumber} from '../../shared/validators/number-validator';
-import {MotorcycleService} from './motorcycle.service';
+import {validateNumber} from '../../../shared/validators/number-validator';
+import {MotorcycleService} from '../../services/motorcycle.service';
 
 @Component({
   selector: 'app-motorcycle',
