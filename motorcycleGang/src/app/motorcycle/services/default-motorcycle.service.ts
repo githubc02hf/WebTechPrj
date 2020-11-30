@@ -1,6 +1,6 @@
 import {Injectable, Optional} from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
-import {Motorcycle} from '../entities/motorcycle';
+import {Motorcycle} from '../../entities/motorcycle';
 import {Observable} from 'rxjs';
 import {MotorcycleService} from './motorcycle.service';
 
