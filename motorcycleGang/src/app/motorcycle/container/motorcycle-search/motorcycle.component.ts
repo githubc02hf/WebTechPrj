@@ -39,6 +39,11 @@ export class MotorcycleComponent implements OnInit {
       color: [null, {validators: [Validators.required], updateOn: 'change'}],
 
     });
+
+    this.registerForm.valueChanges
+      .subscribe(value => {
+        this.search();
+      });
   }
 
   search(): void {
