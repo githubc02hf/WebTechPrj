@@ -5,9 +5,8 @@ import {AppointmentComponent} from './appointment/container/appointment-book/app
 import {MotorcycleComponent} from './motorcycle/container/motorcycle-search/motorcycle.component';
 import {MotorcycleEditComponent} from './motorcycle/container/motorcycle-edit/motorcycle-edit.component';
 import {AppComponent} from './app.component';
-import {HomeComponent} from './home/home.component';
-import { AppointmentComponent } from './appointment/appointment.component';
-import { CustomerComponent } from './customer/customer.component';
+import { CustomerComponent } from './customer/container/customer-search/customer.component';
+import { CustomerEditComponent } from './customer/container/customer-edit/customer-edit.component';
 
 const routes: Routes = [
   {
@@ -43,7 +42,21 @@ const routes: Routes = [
   },
   {
     path: 'customer',
-    component: CustomerComponent
+    children: [
+      {
+        path: '',
+        redirectTo: 'customer-search',
+        pathMatch: 'full'
+      },
+      {
+        path: 'customer-search',
+        component: CustomerComponent
+      },
+      {
+        path: 'customer-edit',
+        component: CustomerEditComponent
+      }
+    ] 
   },
   {
     path: '**',

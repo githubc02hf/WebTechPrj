@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
-import { Customer } from '../entities/customer';
-import { FormGroup } from '@angular/forms';
+import { Customer } from '../../../entities/customer';
 import { MatTableDataSource } from '@angular/material/table';
 import { stringify } from 'querystring';
 
@@ -13,7 +12,6 @@ import { stringify } from 'querystring';
 export class CustomerComponent implements OnInit {
   displayedColumns: string[] = ['id', 'firstName', 'lastName', 'gender','phoneNumber','email','actions'];
   dataSource: MatTableDataSource<Customer>;
-  customerForm: FormGroup;
   customerList: Array<Customer>;
   searchFieldInput: string;
 

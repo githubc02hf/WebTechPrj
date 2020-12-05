@@ -1,0 +1,24 @@
+<mat-card
+  class="card mat-card"
+  [ngStyle]="{'background-color': (selected) ? 'rgb(111, 197, 185)' : 'rgb(111,197,185)' }">
+  <mat-card-header>
+    <mat-card-title style="font-size: 1.3vw;">brand</mat-card-title>
+    <mat-card-subtitle style="font-size: 0.9vw;">model</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content class="content">
+    <p>
+      ID: 1234
+    </p>
+    <p>
+      Horsepower:   230
+    </p>
+    <p>
+      <ng-content></ng-content>
+    </p>
+        <button mat-button
+            >
+            <mat-icon>
+                <a [routerLink]="['/customer/customer-edit']">edit</a></mat-icon>
+        </button>
+    </mat-card-content>
+</mat-card>

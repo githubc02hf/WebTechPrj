@@ -14,35 +14,13 @@
             </mat-form-field>
         </div>
         <mat-divider></mat-divider>
-        <div class="formField">
-            <form id="custForm" [formGroup]="customerForm">
-                <mat-form-field class appearance="outline">
-                    <mat-label>First Name</mat-label>
-                    <input matInput>
-                </mat-form-field>
-                <mat-form-field class appearance="outline">
-                    <mat-label>Last Name</mat-label>
-                    <input matInput>
-                </mat-form-field>
-                <mat-form-field class appearance="outline">
-                    <mat-label>Gender</mat-label>
-                    <input matInput>
-                </mat-form-field>
-                <mat-form-field class appearance="outline">
-                    <mat-label>Phone Number</mat-label>
-                    <input matInput>
-                </mat-form-field>
-                <mat-form-field class appearance="outline">
-                    <mat-label>Email</mat-label>
-                    <input matInput>
-                </mat-form-field>
-                <mat-form-field class appearance="outline">
-                    <mat-label>Date of Birth</mat-label>
-                    <input matInput>
-                </mat-form-field>
-                <button mat-raised-button color="primary" type="submit">Save</button>
-            </form>
-        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+              <app-customer-card>
+
+              </app-customer-card>
+            </div>
+          </div>
         <mat-divider></mat-divider>
         <div class="table" style="height: 50%">
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">

@@ -34,7 +34,9 @@ import { from } from 'rxjs';
 import { MotorcycleCardComponent } from './motorcycle/components/motorcycle-card/motorcycle-card.component';
 import { MotorcycleEditComponent } from './motorcycle/container/motorcycle-edit/motorcycle-edit.component';
 import { NumberValidatorDirective } from './shared/validation/number-validator.directive';
-import { CustomerComponent } from './customer/customer.component';
+import {CustomerComponent} from './customer/container/customer-search/customer.component';
+import { CustomerCardComponent } from './customer/components/customer-card/customer-card.component';
+import { CustomerEditComponent } from './customer/container/customer-edit/customer-edit.component';
 
 @NgModule({
   imports: [
@@ -72,8 +74,10 @@ import { CustomerComponent } from './customer/customer.component';
     AppointmentComponent,
     MotorcycleCardComponent,
     MotorcycleEditComponent,
-    NumberValidatorDirective
-    CustomerComponent
+    NumberValidatorDirective,
+    CustomerComponent,
+    CustomerCardComponent,
+    CustomerEditComponent
   ],
   providers: [MatNativeDateModule],
   bootstrap: [AppComponent]
