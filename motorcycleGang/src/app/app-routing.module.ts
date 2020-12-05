@@ -4,6 +4,10 @@ import {HomeComponent} from './core/home/home.component';
 import {AppointmentComponent} from './appointment/container/appointment-book/appointment.component';
 import {MotorcycleComponent} from './motorcycle/container/motorcycle-search/motorcycle.component';
 import {MotorcycleEditComponent} from './motorcycle/container/motorcycle-edit/motorcycle-edit.component';
+import {AppComponent} from './app.component';
+import {HomeComponent} from './home/home.component';
+import { AppointmentComponent } from './appointment/appointment.component';
+import { CustomerComponent } from './customer/customer.component';
 
 const routes: Routes = [
   {
@@ -36,6 +40,10 @@ const routes: Routes = [
   {
     path: 'appointment',
     component: AppointmentComponent
+  },
+  {
+    path: 'customer',
+    component: CustomerComponent
   },
   {
     path: '**',

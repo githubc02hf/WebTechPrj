@@ -14,6 +14,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatNativeDateModule, MatOptionModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
+import {MatListModule} from '@angular/material/list'; 
 import {MatButtonModule} from '@angular/material/button';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatIconModule} from '@angular/material/icon';
@@ -33,6 +34,7 @@ import { from } from 'rxjs';
 import { MotorcycleCardComponent } from './motorcycle/components/motorcycle-card/motorcycle-card.component';
 import { MotorcycleEditComponent } from './motorcycle/container/motorcycle-edit/motorcycle-edit.component';
 import { NumberValidatorDirective } from './shared/validation/number-validator.directive';
+import { CustomerComponent } from './customer/customer.component';
 
 @NgModule({
   imports: [
@@ -60,7 +62,7 @@ import { NumberValidatorDirective } from './shared/validation/number-validator.d
     MatDatepickerModule,
     MatNativeDateModule,
     MatButtonToggleModule,
-    FlexLayoutModule
+    MatListModule
   ],
   declarations: [
     AppComponent,
@@ -71,6 +73,7 @@ import { NumberValidatorDirective } from './shared/validation/number-validator.d
     MotorcycleCardComponent,
     MotorcycleEditComponent,
     NumberValidatorDirective
+    CustomerComponent
   ],
   providers: [MatNativeDateModule],
   bootstrap: [AppComponent]
