@@ -1,0 +1,9 @@
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.flex-container > div {
+  width: 14%;
+  text-align: center;
+}

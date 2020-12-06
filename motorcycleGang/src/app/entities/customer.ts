@@ -1,3 +1,5 @@
+import { Motorcycle } from './motorcycle';
+
 export class Customer {
     id: number;
     firstName: string;
@@ -5,5 +7,6 @@ export class Customer {
     gender: string;
     phoneNumber: number;
     email: string;
-    dateOfBirth: string;
+    motorcycleId: number;
+    appointmentId: number;
 }

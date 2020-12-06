@@ -85,7 +85,9 @@
       "lastName": "Mustermann",
       "gender": "male",
       "email": "max.mustermann@gmail.com",
-      "phoneNumber": "004312345678"
+      "phoneNumber": "004312345678",
+      "motorcycleId": 3,
+      "appointmentId": 1
     },
     {
       "id": 2,
@@ -93,7 +95,9 @@
       "lastName": "Doe",
       "gender": "female",
       "email": "ja.doe@gmx.com",
-      "phoneNumber": "004988881111"
+      "phoneNumber": "004988881111",
+      "motorcycleId": 5,
+      "appointmentId": 4
     },
     {
       "id": 3,
@@ -101,7 +105,9 @@
       "lastName": "Doe",
       "gender": "male",
       "email": "jo.doe@web.de",
-      "phoneNumber": "12345582"
+      "phoneNumber": "12345582",
+      "motorcycleId": 2,
+      "appointmentId": 3
     },
     {
       "id": 4,
@@ -109,7 +115,9 @@
       "lastName": "lover",
       "gender": "other",
       "email": "bikeLover1337@gmail.com",
-      "phoneNumber": "004312345982"
+      "phoneNumber": "004312345982",
+      "motorcycleId": 4,
+      "appointmentId": 2
     }
   ]
 }
