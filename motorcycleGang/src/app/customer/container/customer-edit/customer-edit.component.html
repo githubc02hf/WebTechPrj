@@ -1,35 +1,42 @@
 <mat-divider></mat-divider>
 <div class="formField">
     <form id="custForm" 
-    #editFrom="ngForm">
+    [formGroup]="customerForm">
         <mat-form-field class appearance="outline">
-            <mat-label>First Name</mat-label>
-            <input matInput>{{customer.firstName}}
+            <mat-label>{{customer.firstName}}</mat-label>
+            <mat-hint>First Name</mat-hint>
+            <input matInput formControlName="firstName">
         </mat-form-field>
         <mat-form-field class appearance="outline">
-            <mat-label>Last Name</mat-label>
-            <input matInput>{{customer.lastName}}
+            <mat-label>{{customer.lastName}}</mat-label>
+            <mat-hint>Last Name</mat-hint>
+            <input matInput formControlName="lastName">
         </mat-form-field>
         <mat-form-field class appearance="outline">
-            <mat-label>Gender</mat-label>
-            <input matInput>{{customer.gender}}
+            <mat-label>{{customer.gender}}</mat-label>
+            <mat-hint>Gender</mat-hint>
+            <input matInput formControlName="gender">
         </mat-form-field>
         <mat-form-field class appearance="outline">
-            <mat-label>Phone Number</mat-label>
-            <input matInput>{{customer.phoneNumber}}
+            <mat-label>{{customer.phoneNumber}}</mat-label>
+            <mat-hint>Phone Number</mat-hint>
+            <input matInput formControlName="phoneNumber">
         </mat-form-field>
         <mat-form-field class appearance="outline">
-            <mat-label>Email</mat-label>
-            <input matInput>{{customer.email}}
+            <mat-label>{{customer.email}}</mat-label>
+            <mat-hint>Email</mat-hint>
+            <input matInput formControlName="email">
         </mat-form-field>
         <mat-form-field class appearance="outline">
-            <mat-label>Motorcycle ID</mat-label>
-            <input matInput>{{customer.motorcycleId}}
+            <mat-label>{{customer.motorcycleId}}</mat-label>
+            <mat-hint>Motorcycle ID</mat-hint>
+            <input matInput formControlName="motorcycleId">
         </mat-form-field>
         <mat-form-field class appearance="outline">
-            <mat-label>Appointment ID</mat-label>
-            <input matInput>{{customer.appointmentId}}
+            <mat-label>{{customer.appointmentId}}</mat-label>
+            <mat-hint>Appointment ID</mat-hint>
+            <input matInput formControlName="appointmentId">
         </mat-form-field>
-        <button mat-raised-button color="primary" type="submit">Save</button>
+        <button mat-raised-button color="primary" (click)="saveCustomer()" type="submit">Save</button>
     </form>
 </div>

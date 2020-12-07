@@ -80,16 +80,6 @@
   ],
   "customer": [
     {
-      "id": 1,
-      "firstName": "Max",
-      "lastName": "Mustermann",
-      "gender": "male",
-      "email": "max.mustermann@gmail.com",
-      "phoneNumber": "004312345678",
-      "motorcycleId": 3,
-      "appointmentId": 1
-    },
-    {
       "id": 2,
       "firstName": "Jane",
       "lastName": "Doe",
@@ -118,6 +108,16 @@
       "phoneNumber": "004312345982",
       "motorcycleId": 4,
       "appointmentId": 2
+    },
+    {
+      "id": 1,
+      "firstName": "Max",
+      "lastName": "Mustermann",
+      "gender": "male",
+      "phoneNumber": 4312345678,
+      "email": "max.mustermann@gmail.com",
+      "motorcycleId": 3,
+      "appointmentId": 1
     }
   ]
 }

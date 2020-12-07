@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Customer } from 'src/app/entities/customer';
+import { CustomerService } from '../../services/customer.service';
 
 @Component({
   selector: 'app-customer-edit',
@@ -13,13 +14,14 @@ export class CustomerEditComponent implements OnInit {
   customer: Customer;
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private customerService: CustomerService,
+    private formBuilder: FormBuilder
   ) { }
 
   customerForm: FormGroup;
 
   ngOnInit(): void {
-    console.log("test1");
     this.fillCustomerFormField();
   }
 
@@ -36,8 +38,40 @@ export class CustomerEditComponent implements OnInit {
       this.customer.appointmentId = +params.get('appointmentId');
     });
 
-      console.log("test");
-      console.log(this.customer);
+    this.customerForm = this.formBuilder.group({
+      firstName:['', {updateOn: 'change'}],
+      lastName:['', {updateOn: 'change'}],
+      gender:['', {updateOn: 'change'}],
+      phoneNumber:['', {updateOn: 'change'}],
+      email:['', {updateOn: 'change'}],
+      motorcycleId:['', {updateOn: 'change'}],
+      appointmentId:['', {updateOn: 'change'}]
+    });
   }
 
+  saveCustomer(){
+    if (this.customerForm.get('firstName').value!==''){
+      this.customer.firstName = this.customerForm.get('firstName').value;
+    }
+    if (this.customerForm.get('lastName').value!==''){
+      this.customer.lastName = this.customerForm.get('lastName').value;
+    }
+    if (this.customerForm.get('gender').value!==''){
+      this.customer.gender = this.customerForm.get('gender').value;
+    }
+    if (this.customerForm.get('phoneNumber').value!==''){
+      this.customer.phoneNumber = this.customerForm.get('phoneNumber').value;
+    }
+    if (this.customerForm.get('email').value!==''){
+      this.customer.email = this.customerForm.get('email').value;
+    }
+    if (this.customerForm.get('motorcycleId').value!==''){
+      this.customer.motorcycleId = this.customerForm.get('motorcycleId').value;
+    }
+    if (this.customerForm.get('appointmentId').value!==''){
+      this.customer.appointmentId = this.customerForm.get('appointmentId').value;
+    }
+
+    this.customerService.saveCustomer(this.customer);
+  }
 }
