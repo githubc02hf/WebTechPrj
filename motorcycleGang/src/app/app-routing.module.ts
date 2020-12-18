@@ -4,6 +4,9 @@ import {HomeComponent} from './core/home/home.component';
 import {AppointmentComponent} from './appointment/container/appointment-book/appointment.component';
 import {MotorcycleComponent} from './motorcycle/container/motorcycle-search/motorcycle.component';
 import {MotorcycleEditComponent} from './motorcycle/container/motorcycle-edit/motorcycle-edit.component';
+import {AppComponent} from './app.component';
+import { CustomerComponent } from './customer/container/customer-search/customer.component';
+import { CustomerEditComponent } from './customer/container/customer-edit/customer-edit.component';
 
 const routes: Routes = [
   {
@@ -36,6 +39,24 @@ const routes: Routes = [
   {
     path: 'appointment',
     component: AppointmentComponent
+  },
+  {
+    path: 'customer',
+    children: [
+      {
+        path: '',
+        redirectTo: 'customer-search',
+        pathMatch: 'full'
+      },
+      {
+        path: 'customer-search',
+        component: CustomerComponent
+      },
+      {
+        path: 'customer-edit',
+        component: CustomerEditComponent
+      }
+    ] 
   },
   {
     path: '**',

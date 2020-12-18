@@ -1,0 +1,36 @@
+<mat-card
+  class="card mat-card"
+  [ngStyle]="{'background-color': (selected) ? 'rgb(111, 197, 185)' : 'rgb(99,99,99)' }">
+  <mat-card-content class="content">
+    <div class="flex-container">
+    <div class="card-info">
+      {{customer.firstName}}
+    </div>
+    <div class="card-info">
+      {{customer.lastName}}
+    </div>
+    <div class="card-info">
+      {{customer.gender}}
+    </div>
+    <div class="card-info">
+      {{customer.phoneNumber}}
+    </div>
+    <div class="card-info">
+      {{customer.email}}
+    </div>
+    <div class="card-info">
+      {{customer.motorcycleId}}
+    </div>
+    <div class="card-info">
+      {{customer.appointmentId}}
+    </div>
+        <button mat-button>
+            <mat-icon>
+                <a [routerLink]="['/customer/customer-edit', customer]">edit</a></mat-icon>
+        </button>
+        <button mat-button id="delete" (click)="onDelete()">
+            <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,42 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Customer</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="searchBar">
+            <mat-form-field class="example-form-field" appearance="outline">
+                <mat-label>Search</mat-label>
+            <input matInput [(ngModel)]="searchFieldInput" type="text">
+                <button mat-button matSuffix mat-icon-button aria-label="Search"
+                (click)="searchForCustomers()">
+                    <mat-icon>search</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="customer-cards-header">
+            <div class="element">First Name</div>
+            <div class="element">Last Name</div>
+            <div class="element">Gender</div>
+            <div class="element">Phone Number</div>
+            <div class="element">Email</div>
+            <div class="element">Motorcycle Id</div>
+            <div class="element">Appointment Id</div>
+            <div class="headerButton">Edit</div>
+            <div class="headerButton">Delete</div>
+        </div>
+        <div class="row"
+            *ngFor="let customer of customerList">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+              <app-customer-card 
+                  [customer]="customer">
+              </app-customer-card>
+            </div>
+          </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button id="create-button" mat-fab mat-con-button (click)="createCustomer()">
+            <mat-icon><a [routerLink]="['/customer/customer-edit', newCustomer]">add</a></mat-icon>
+        </button>
+    </mat-card-actions>
+  </mat-card>

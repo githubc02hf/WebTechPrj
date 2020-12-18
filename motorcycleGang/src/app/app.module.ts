@@ -14,10 +14,12 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatNativeDateModule, MatOptionModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
+import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatDialogModule} from '@angular/material/dialog';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {HomeComponent} from './core/home/home.component';
@@ -33,6 +35,10 @@ import { from } from 'rxjs';
 import { MotorcycleCardComponent } from './motorcycle/components/motorcycle-card/motorcycle-card.component';
 import { MotorcycleEditComponent } from './motorcycle/container/motorcycle-edit/motorcycle-edit.component';
 import { NumberValidatorDirective } from './shared/validation/number-validator.directive';
+import {CustomerComponent} from './customer/container/customer-search/customer.component';
+import { CustomerCardComponent } from './customer/components/customer-card/customer-card.component';
+import { CustomerEditComponent } from './customer/container/customer-edit/customer-edit.component';
+import { MatConfirmDialogComponent } from './mat-confirm-dialog/mat-confirm-dialog.component';
 
 @NgModule({
   imports: [
@@ -60,7 +66,9 @@ import { NumberValidatorDirective } from './shared/validation/number-validator.d
     MatDatepickerModule,
     MatNativeDateModule,
     MatButtonToggleModule,
-    FlexLayoutModule
+    MatListModule,
+    FlexLayoutModule,
+    MatDialogModule
   ],
   declarations: [
     AppComponent,
@@ -70,7 +78,11 @@ import { NumberValidatorDirective } from './shared/validation/number-validator.d
     AppointmentComponent,
     MotorcycleCardComponent,
     MotorcycleEditComponent,
-    NumberValidatorDirective
+    NumberValidatorDirective,
+    CustomerComponent,
+    CustomerCardComponent,
+    CustomerEditComponent,
+    MatConfirmDialogComponent
   ],
   providers: [MatNativeDateModule],
   bootstrap: [AppComponent]

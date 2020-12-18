@@ -77,5 +77,47 @@
       "color": "Black",
       "horsepower": 120
     }
+  ],
+  "customer": [
+    {
+      "id": 2,
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "gender": "female",
+      "email": "ja.doe@gmx.com",
+      "phoneNumber": "004988881111",
+      "motorcycleId": 5,
+      "appointmentId": 4
+    },
+    {
+      "id": 3,
+      "firstName": "John",
+      "lastName": "Doe",
+      "gender": "male",
+      "email": "jo.doe@web.de",
+      "phoneNumber": "12345582",
+      "motorcycleId": 2,
+      "appointmentId": 3
+    },
+    {
+      "id": 4,
+      "firstName": "bike",
+      "lastName": "lover",
+      "gender": "other",
+      "email": "bikeLover1337@gmail.com",
+      "phoneNumber": "004312345982",
+      "motorcycleId": 4,
+      "appointmentId": 2
+    },
+    {
+      "id": 1,
+      "firstName": "Max",
+      "lastName": "Mustermann",
+      "gender": "male",
+      "phoneNumber": 4312345678,
+      "email": "max.mustermann@gmail.com",
+      "motorcycleId": 3,
+      "appointmentId": 1
+    }
   ]
 }
