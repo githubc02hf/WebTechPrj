@@ -7,6 +7,29 @@
   padding-top: 10px;
 }
 
-.table {
-  padding-top: 10px;
+.mat-card-actions {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+#createButton {
+  align-self: center;
+}
+.customer-cards-header {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.customer-cards-header .element {
+  flex-basis: 14%;
+  text-align: center;
+}
+
+.headerButton {
+  width: 4.6%;
+  display: flex;
+  text-align: center;
+  flex-wrap: nowrap;
 }

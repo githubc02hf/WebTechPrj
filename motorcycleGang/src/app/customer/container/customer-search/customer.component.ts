@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Customer } from '../../../entities/customer';
 import { CustomerService } from '../../services/customer.service';
 
@@ -11,9 +11,20 @@ export class CustomerComponent implements OnInit {
   searchFieldInput: string;
   selectedCustomer: Customer;
   customerList: Array<Customer>;
+  @Output() editCustomerEvent = new EventEmitter();
+  newCustomer: Customer;
 
 
   constructor(private customerService: CustomerService) { 
+    this.newCustomer = new Customer();
+    this.newCustomer.id = 0;
+    this.newCustomer.firstName = "";
+    this.newCustomer.lastName = "";
+    this.newCustomer.gender = "";
+    this.newCustomer.phoneNumber = 0;
+    this.newCustomer.email = "";
+    this.newCustomer.appointmentId = 0;
+    this.newCustomer.motorcycleId = 0;
   }
 
   ngOnInit(): void {
@@ -41,4 +52,7 @@ export class CustomerComponent implements OnInit {
    };
 
 
+   createCustomer(){
+     this.editCustomerEvent.emit(this.newCustomer);
+   }
 }

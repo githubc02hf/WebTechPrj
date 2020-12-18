@@ -19,6 +19,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatDialogModule} from '@angular/material/dialog';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {HomeComponent} from './core/home/home.component';
@@ -37,6 +38,7 @@ import { NumberValidatorDirective } from './shared/validation/number-validator.d
 import {CustomerComponent} from './customer/container/customer-search/customer.component';
 import { CustomerCardComponent } from './customer/components/customer-card/customer-card.component';
 import { CustomerEditComponent } from './customer/container/customer-edit/customer-edit.component';
+import { MatConfirmDialogComponent } from './mat-confirm-dialog/mat-confirm-dialog.component';
 
 @NgModule({
   imports: [
@@ -65,7 +67,8 @@ import { CustomerEditComponent } from './customer/container/customer-edit/custom
     MatNativeDateModule,
     MatButtonToggleModule,
     MatListModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatDialogModule
   ],
   declarations: [
     AppComponent,
@@ -78,7 +81,8 @@ import { CustomerEditComponent } from './customer/container/customer-edit/custom
     NumberValidatorDirective,
     CustomerComponent,
     CustomerCardComponent,
-    CustomerEditComponent
+    CustomerEditComponent,
+    MatConfirmDialogComponent
   ],
   providers: [MatNativeDateModule],
   bootstrap: [AppComponent]

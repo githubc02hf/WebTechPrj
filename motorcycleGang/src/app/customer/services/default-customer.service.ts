@@ -59,6 +59,9 @@ export class DefaultCustomerService implements CustomerService{
   };
 
   deleteCustomer(customer: Customer): void {
+    // TODO: delete references to motorcycle and appointment
+    //this.removeCustomerAppointment(customer);
+    //this.removeCustomerBikeConnection(customer);
     this.http.delete(this.apiCustomerUrl + customer.id)
       .subscribe(
         customer => {

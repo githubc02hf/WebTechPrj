@@ -1,8 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder,  FormGroup } from '@angular/forms';
+import { MatDialog} from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { Customer } from 'src/app/entities/customer';
+import { DialogService } from 'src/app/shared/validation/dialog.service';
 import { CustomerService } from '../../services/customer.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-customer-edit',
@@ -16,7 +19,10 @@ export class CustomerEditComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private customerService: CustomerService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private dialogService: DialogService,
+    public dialog: MatDialog,
+    private location: Location
   ) { }
 
   customerForm: FormGroup;
@@ -49,7 +55,16 @@ export class CustomerEditComponent implements OnInit {
     });
   }
 
+  onSave(){
+    this.dialogService.openConfirmDialog("Are you sure to save this record permanently?").afterClosed().subscribe(res =>{
+      if(res){
+        this.saveCustomer();
+      }
+    });
+
+  }
   saveCustomer(){
+    
     if (this.customerForm.get('firstName').value!==''){
       this.customer.firstName = this.customerForm.get('firstName').value;
     }
@@ -74,4 +89,8 @@ export class CustomerEditComponent implements OnInit {
 
     this.customerService.saveCustomer(this.customer);
   }
+  
+onBack(){
+  this.location.back();
+}
 }

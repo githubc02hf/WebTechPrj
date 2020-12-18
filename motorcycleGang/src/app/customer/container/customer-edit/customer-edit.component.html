@@ -1,3 +1,4 @@
+<button mat-button mat-icon (click)="onBack()">Back</button>
 <mat-divider></mat-divider>
 <div class="formField">
     <form id="custForm" 
@@ -37,6 +38,6 @@
             <mat-hint>Appointment ID</mat-hint>
             <input matInput formControlName="appointmentId">
         </mat-form-field>
-        <button mat-raised-button color="primary" (click)="saveCustomer()" type="submit">Save</button>
+        <button mat-raised-button color="primary" (click)="onSave()" type="submit">Save</button>
     </form>
 </div>

@@ -17,5 +17,7 @@ export abstract class CustomerService {
 
   abstract saveCustomer(customer: Customer): void;
 
+  abstract deleteCustomer(customer: Customer): void;
+
 }
 
