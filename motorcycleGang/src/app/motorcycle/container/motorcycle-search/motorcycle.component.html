@@ -144,6 +144,18 @@
         [motorcycle]="motorcycle"
         [(selectedMotorcycle)]="selectedMotorcycle"
       >
+        <div style="display: flex; flex-direction: row; height: 30px; align-items: center">
+          Customer: {{ motorcycle.customer ? motorcycle.customer.firstName : '-' }}
+          <button
+            mat-icon-button
+            aria-label="edit"
+            color="primary"
+            *ngIf="motorcycle.customer"
+            [routerLink]="['/customer/customer-edit', motorcycle.customer]">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
+
         <button
           mat-raised-button
           style="margin: 5px"

@@ -3,35 +3,27 @@ import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {Motorcycle} from '../../entities/motorcycle';
 import {Observable} from 'rxjs';
 import {MotorcycleService} from './motorcycle.service';
-import {FormBuilder,} from "@angular/forms";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DefaultMotorcycleService implements MotorcycleService {
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
+  apiUrl = 'http://localhost:3000/api/motorcycles/';
+  headers = new HttpHeaders().set('Accept', 'application/json');
+
+  constructor(private http: HttpClient) {
   }
 
   find(params): Observable<Motorcycle[]> {
-    const apiUrl = 'http://localhost:3000/api/motorcycles/';
-
-    const headers = new HttpHeaders()
-      .set('Accept', 'application/json');
-
     return this.http
-      .get<Motorcycle[]>(apiUrl, {params, headers});
+      .get<Motorcycle[]>(this.apiUrl, {params, headers: this.headers});
   }
 
   save(motorcycleToSave): Motorcycle {
-    const apiUrl = 'http://localhost:3000/api/motorcycles/';
-
-    const headers = new HttpHeaders()
-      .set('Accept', 'application/json');
-
     motorcycleToSave.horsepower = parseInt(motorcycleToSave.horsepower, 10);
     this.http
-      .post<Motorcycle>(apiUrl, motorcycleToSave, {headers})
+      .post<Motorcycle>(this.apiUrl, motorcycleToSave, {headers: this.headers})
       .subscribe(
         motorcycle => {
           return motorcycle;
@@ -44,10 +36,8 @@ export class DefaultMotorcycleService implements MotorcycleService {
   }
 
   deleteById(id): void {
-    const apiUrl = 'http://localhost:3000/api/motorcycles/';
-
     this.http
-      .delete(apiUrl + id)
+      .delete(this.apiUrl + id)
       .subscribe(
         motorcycle => {
         },

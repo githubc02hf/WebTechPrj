@@ -1,3 +1,5 @@
+import {Customer} from './customer';
+
 export class Motorcycle {
 
   id: number;
@@ -5,5 +7,6 @@ export class Motorcycle {
   model: string;
   horsepower: number;
   color: string;
+  customer: Customer;
 
 }

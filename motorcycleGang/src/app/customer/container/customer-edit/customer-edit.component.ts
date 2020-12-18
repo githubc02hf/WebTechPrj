@@ -64,7 +64,7 @@ export class CustomerEditComponent implements OnInit {
 
   }
   saveCustomer(){
-    
+
     if (this.customerForm.get('firstName').value!==''){
       this.customer.firstName = this.customerForm.get('firstName').value;
     }
@@ -81,15 +81,15 @@ export class CustomerEditComponent implements OnInit {
       this.customer.email = this.customerForm.get('email').value;
     }
     if (this.customerForm.get('motorcycleId').value!==''){
-      this.customer.motorcycleId = this.customerForm.get('motorcycleId').value;
+      this.customer.motorcycleId = parseInt(this.customerForm.get('motorcycleId').value, 10);
     }
     if (this.customerForm.get('appointmentId').value!==''){
-      this.customer.appointmentId = this.customerForm.get('appointmentId').value;
+      this.customer.appointmentId = parseInt(this.customerForm.get('appointmentId').value, 10);
     }
 
     this.customerService.saveCustomer(this.customer);
   }
-  
+
 onBack(){
   this.location.back();
 }

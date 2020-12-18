@@ -3,7 +3,11 @@ import {HttpParams} from '@angular/common/http';
 import {Motorcycle} from '../../../entities/motorcycle';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MotorcycleService} from '../../services/motorcycle.service';
-import {NumberValidatorDirective} from "../../../shared/validation/number-validator.directive";
+import {NumberValidatorDirective} from '../../../shared/validation/number-validator.directive';
+import {Observable} from 'rxjs';
+import {CustomerService} from '../../../customer/services/customer.service';
+import {Customer} from '../../../entities/customer';
+import {connectableObservableDescriptor} from 'rxjs/internal/observable/ConnectableObservable';
 
 @Component({
   selector: 'app-motorcycle',
@@ -12,20 +16,20 @@ import {NumberValidatorDirective} from "../../../shared/validation/number-valida
 
 export class MotorcycleComponent implements OnInit {
 
-  // TODO Child-Compontent • Soll per Data-Binding Daten von Parent-Component erhalten und an diese senden
-
   motorcycles: Array<Motorcycle> = [];
   selectedMotorcycle: Motorcycle;
   displayedColumns: string[] = ['id', 'brand', 'model', 'horsepower', 'color', 'delete'];
   selectedId: -1;
   registerForm: FormGroup;
+  customers: Array<Customer> = [];
 
-  constructor(private formBuilder: FormBuilder, private motorcycleService: MotorcycleService) {
+  constructor(private formBuilder: FormBuilder, private motorcycleService: MotorcycleService, private customerService: CustomerService) {
 
   }
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
+    this.getAllCustomers();
     this.search();
 
     this.registerForm = this.formBuilder.group({
@@ -59,11 +63,21 @@ export class MotorcycleComponent implements OnInit {
         .set('color_like', this.registerForm.get('color').value ? this.registerForm.get('color').value : '');
     }
 
-    this.motorcycleService
+    const test = this.motorcycleService
       .find(params)
       .subscribe(
-        motorcycle => {
-          this.motorcycles = motorcycle;
+        motorcyclesFromDb => {
+          this.motorcycles = motorcyclesFromDb;
+
+          this.motorcycles.forEach(motorcycle => {
+            motorcycle.customer = this.customers.find(item => {
+              if (item.motorcycleId === motorcycle.id) {
+                return item;
+              }
+            });
+            console.log(motorcycle.customer);
+          });
+
         },
         err => {
           console.error('Error loading motorcycles', err);
@@ -88,6 +102,16 @@ export class MotorcycleComponent implements OnInit {
     }
     this.search();
 
+  }
+
+  getAllCustomers(): void {
+    this.customerService.getCustomers()
+      .subscribe(customers => {
+          this.customers = customers;
+        }, error => {
+          console.log('Could not retrieve customers', error);
+        }
+      );
   }
 
   deleteMotorcycleById(id): void {
