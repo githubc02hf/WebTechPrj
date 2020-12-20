@@ -1,0 +1,12 @@
+.searchBar {
+    margin: 10px;
+}
+
+.create-button {
+    float: right;
+    margin: 10px;
+}
+
+.mat-elevation-z8 {
+    width: 100%;
+}
