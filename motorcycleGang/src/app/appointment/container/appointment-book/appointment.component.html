@@ -1,75 +1,63 @@
 <div class="container">
-
-
-
     <mat-card>
         <div class="row">
-            <div class="column" style="width: 25%;">
-                <img src="/assets/images/yamaha.jpg">
-            </div>
+            <div class="column" style="width: 20%; background-color: gray; opacity: 0.5;"></div>
 
-            <div class="column" style="width: 65%;">
+            <div class="column" style="width: 70%;">
                 <mat-card-title>Appointment</mat-card-title>
                 <mat-card-content>
-                    <form>
+                    <form 
+                        [formGroup]='appointmentForm'
+                        (submit)='handleSave()'>
+
                         <h3>Personal Information</h3>
                         <mat-form-field appearance="standard">
                             <mat-label>First Name</mat-label>
-                            <input matInput [formControl]='firstName' required>
-                            <mat-error *ngIf='firstName.invalid'>{{getErrorMessage()}}</mat-error>
+                            <input matInput type="text" formControlName='firstName' required>
                         </mat-form-field>
                         <br>
 
                         <mat-form-field appearance="standard">
                             <mat-label>Last Name</mat-label>
-                            <input matInput [formControl]='lastName' required>
-                            <mat-error *ngIf='lastName.invalid'>{{getErrorMessage()}}</mat-error>
-                        </mat-form-field>
+                            <input matInput type="text" formControlName='lastName' required>
+                             </mat-form-field>
                         <br>
 
                         <h3>Contact Information</h3>
                         <mat-form-field appearance="standard">
                             <mat-label>Phone number</mat-label>
                             <mat-icon matSuffix>phone</mat-icon>
-                            <input matInput>
+                            <input matInput formControlName='phoneNumber'>
                             <mat-error></mat-error>
                         </mat-form-field>
                         <br>
 
                         <mat-form-field appearance="standard">
                             <mat-label>E-Mail</mat-label>
-                            <input matInput placeholder="pat@example.com" [formControl]="email" required>
-                            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                            <input matInput type="email" placeholder="pat@example.com" formControlName='email' required>
                         </mat-form-field>
                         <br>
-
-
 
                         <h3>Appointment information</h3>
                         <mat-form-field appearance="standard">
                             <mat-label>Preferred date</mat-label>
-                            <input matInput [matDatepicker]="picker">
+                            <input matInput [matDatepicker]="picker" formControlName='date'>
                             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                             <mat-datepicker #picker></mat-datepicker>
                         </mat-form-field>
                         <br>
 
                         <mat-form-field appearance="standard">
-                            <mat-label>Descriping issue</mat-label>
-                            <mat-select>
+                            <mat-label>Issue</mat-label>
+                            <mat-select formControlName='issue'>
                                 <mat-option value="repair">Repair</mat-option>
                                 <mat-option value="safety inspection">Safety Inspection</mat-option>
-                                <mat-option value="tre change">Tire Change</mat-option>
+                                <mat-option value="tire change">Tire Change</mat-option>
                             </mat-select>
                         </mat-form-field>
 
-
-
-
-                        <button mat-raised-button type="submit">Submit</button>
-                    </form>
-
-
+                        <button mat-raised-button type="submit" [disabled]="!appointmentForm.valid">Submit</button>
+                    </form>                   
                 </mat-card-content>
             </div>
         </div>

@@ -2,11 +2,20 @@
     margin: 10px;
 }
 
-.create-button {
+.buttons {
     float: right;
     margin: 10px;
 }
 
+.delete-button, .edit-button {
+    margin-left: 10px;
+}
+
 .mat-elevation-z8 {
-    width: 100%;
+    width: 98%;
+    margin: 10px;
+}
+
+.highlight {
+    background: gray;
 }

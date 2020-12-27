@@ -39,6 +39,7 @@ import {CustomerComponent} from './customer/container/customer-search/customer.c
 import { CustomerCardComponent } from './customer/components/customer-card/customer-card.component';
 import { CustomerEditComponent } from './customer/container/customer-edit/customer-edit.component';
 import { MatConfirmDialogComponent } from './mat-confirm-dialog/mat-confirm-dialog.component';
+import { AppointmentSearchComponent } from './appointment/container/appointment-search/appointment-search.component';
 
 @NgModule({
   imports: [
@@ -82,7 +83,8 @@ import { MatConfirmDialogComponent } from './mat-confirm-dialog/mat-confirm-dial
     CustomerComponent,
     CustomerCardComponent,
     CustomerEditComponent,
-    MatConfirmDialogComponent
+    MatConfirmDialogComponent,
+    AppointmentSearchComponent
   ],
   providers: [MatNativeDateModule],
   bootstrap: [AppComponent]

@@ -6,12 +6,23 @@
             <mat-icon>search</mat-icon>
         </button>
     </mat-form-field>
-    <a [routerLink]="['/appointment/appointment-book']">
-        <button class="create-button" mat-raised-button>New appointment
-            <mat-icon>add</mat-icon>
+
+    <div class="buttons">
+        <a [routerLink]="['/appointment/appointment-book']" style="color: white;">
+            <button class="create-button" mat-button>
+                <mat-icon>add</mat-icon>
+            </button>
+        </a>
+        <button class="edit-button" mat-button [disabled]="selectedRowIndex===-1">
+            <mat-icon>edit</mat-icon>
         </button>
-    </a>
+        <button class="delete-button" mat-button [disabled]="selectedRowIndex===-1"
+                (click)="deleteById(selectedRowIndex)">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </div>
 </div>
+
 <mat-divider></mat-divider>
 <table mat-table [dataSource]="appointmentList" class="mat-elevation-z8">
     <ng-container matColumnDef="id">
@@ -45,5 +56,7 @@
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="{'highlight': selectedRowIndex == row.id}"
+        (click)="highlight(row)">
+    </tr>
 </table>

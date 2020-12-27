@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {HomeComponent} from './core/home/home.component';
 import {AppointmentComponent} from './appointment/container/appointment-book/appointment.component';
+import {AppointmentSearchComponent} from './appointment/container/appointment-search/appointment-search.component';
 import {MotorcycleComponent} from './motorcycle/container/motorcycle-search/motorcycle.component';
 import {MotorcycleEditComponent} from './motorcycle/container/motorcycle-edit/motorcycle-edit.component';
 import {AppComponent} from './app.component';
@@ -38,7 +39,21 @@ const routes: Routes = [
   },
   {
     path: 'appointment',
-    component: AppointmentComponent
+    children: [
+      {
+        path: '',
+        redirectTo: 'appointment-search',
+        pathMatch: 'full'
+      },
+      {
+        path: 'appointment-search',
+        component: AppointmentSearchComponent
+      },
+      {
+        path: 'appointment-book',
+        component: AppointmentComponent
+      }
+    ]
   },
   {
     path: 'customer',

@@ -30,7 +30,7 @@ export class DefaultAppointmentService implements AppointmentService {
     return observable;
   };
 
-  getMatchingAppointmentsFromList(pattern: string){
+  getMatchingAppointmentsFromList(pattern: string) {
     const filterBy = (term) => {
       const termLowerCase = term.toLowerCase()
       return (appointment) =>
@@ -41,4 +41,15 @@ export class DefaultAppointmentService implements AppointmentService {
     return newAppointmentList;
   };
 
+  deleteById(id): void {
+    this.http
+      .delete(this.apiAppointmentUrl + id)
+      .subscribe(
+        appointment => {
+        },
+        err => {
+          console.error('Could not delete appointment with id ' + id, err);
+        }
+      );
+  }
 }

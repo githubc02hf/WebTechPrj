@@ -15,4 +15,6 @@ export abstract class AppointmentService {
 
   abstract getMatchingAppointmentsFromList(pattern: string): Array<Appointment>;
 
+  abstract deleteById(id): void;
+
 }

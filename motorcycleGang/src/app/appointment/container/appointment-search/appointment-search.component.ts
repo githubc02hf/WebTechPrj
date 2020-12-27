@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GridRowStyleBuilder } from '@angular/flex-layout/grid/typings/row/row';
 import { Appointment } from 'src/app/entities/appointment';
 import { AppointmentService } from '../../services/appointment.service'
 
@@ -11,6 +12,7 @@ import { AppointmentService } from '../../services/appointment.service'
 export class AppointmentSearchComponent implements OnInit {
   searchFieldInput: string;
   appointmentList: Array<Appointment>;
+  selectedRowIndex = -1;
   displayedColumns: string[] = ['id', 'firstName', 'lastName', 'phoneNumber', 'preferredDate', 'issue'];
 
   constructor(private appointmentService: AppointmentService) { 
@@ -42,4 +44,17 @@ export class AppointmentSearchComponent implements OnInit {
     this.appointmentList = this.appointmentService.getMatchingAppointmentsFromList(this.searchFieldInput);
   };
 
+  highlight(row) {
+    console.log("row id: " + row.id);
+    if(this.selectedRowIndex === row.id) {
+      this.selectedRowIndex = -1;
+    } else {
+    this.selectedRowIndex = row.id;
+    }
+  }
+
+  deleteById(id) {
+    this.appointmentService.deleteById(id);
+    this.searchForAppointments();
+  }
 }
