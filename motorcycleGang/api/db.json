@@ -76,26 +76,9 @@
       "model": "BIG",
       "color": "Black",
       "horsepower": 120
-    },
-    {
-      "id": 12,
-      "brand": "Yamaha",
-      "model": "MT07",
-      "color": "Blue",
-      "horsepower": 600
     }
   ],
   "customer": [
-    {
-      "id": 1,
-      "firstName": "Max",
-      "lastName": "Mustermann",
-      "gender": "male",
-      "email": "max@gmx.com",
-      "phoneNumber": "00988881111",
-      "motorcycleId": 1,
-      "appointmentId": 1
-    },
     {
       "id": 2,
       "firstName": "Jane",
@@ -125,17 +108,16 @@
       "phoneNumber": "004312345982",
       "motorcycleId": 4,
       "appointmentId": 2
-    }
-  ],
-  "appointments": [
+    },
     {
       "id": 1,
-      "firstName": "Ivica",
-      "lastName": "Budimir",
-      "phoneNumber": "345435",
-      "email": "pat@dsat",
-      "preferredDate": "27/12/2020",
-      "issue": "tire change"
+      "firstName": "Max",
+      "lastName": "Mustermann",
+      "gender": "male",
+      "phoneNumber": 4312345678,
+      "email": "max.mustermann@gmail.com",
+      "motorcycleId": 3,
+      "appointmentId": 1
     }
   ]
 }
