@@ -87,7 +87,7 @@
       "email": "ja.doe@gmx.com",
       "phoneNumber": "004988881111",
       "motorcycleId": 5,
-      "appointmentId": 4
+      "appointmentId": 1
     },
     {
       "id": 3,
@@ -97,7 +97,7 @@
       "email": "jo.doe@web.de",
       "phoneNumber": "12345582",
       "motorcycleId": 2,
-      "appointmentId": 3
+      "appointmentId": 1
     },
     {
       "id": 4,
@@ -107,7 +107,7 @@
       "email": "bikeLover1337@gmail.com",
       "phoneNumber": "004312345982",
       "motorcycleId": 4,
-      "appointmentId": 2
+      "appointmentId": 1
     },
     {
       "id": 1,
@@ -118,6 +118,17 @@
       "email": "max.mustermann@gmail.com",
       "motorcycleId": 3,
       "appointmentId": 1
+    }
+  ],
+  "appointments" : [
+    {
+      "id": 1,
+      "firstName": "Ivica",
+      "lastName": "Budimir",
+      "phoneNumber": "345435",
+      "email": "pat@dsat",
+      "preferredDate": "27/12/2020",
+      "issue": "tire change"
     }
   ]
 }
