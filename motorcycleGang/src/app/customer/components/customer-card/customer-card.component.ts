@@ -13,7 +13,6 @@ import { CustomerService } from '../../services/customer.service';
 export class CustomerCardComponent implements OnInit {
   @Input() selected: boolean;
   @Input() customer: Customer;
-  //@Output() editCustomerEvent = new EventEmitter();
   
   constructor(private dialogService: DialogService,
     private customerService: CustomerService,
@@ -21,10 +20,6 @@ export class CustomerCardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  //editCustomer(): void{
-  //  this.editCustomerEvent.emit(this.customer);
-  //}
 
   onDelete(){
     this.dialogService.openConfirmDialog("Are you sure to delete this record permanently?").afterClosed().subscribe(res =>{

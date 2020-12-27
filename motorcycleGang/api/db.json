@@ -87,6 +87,16 @@
   ],
   "customer": [
     {
+      "id": 1,
+      "firstName": "Max",
+      "lastName": "Mustermann",
+      "gender": "male",
+      "email": "max@gmx.com",
+      "phoneNumber": "00988881111",
+      "motorcycleId": 1,
+      "appointmentId": 1
+    },
+    {
       "id": 2,
       "firstName": "Jane",
       "lastName": "Doe",
