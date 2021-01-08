@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Motorcycle} from "../../../entities/motorcycle";
-import {MotorcycleService} from "../../services/motorcycle.service";
+import {Motorcycle} from '../../../entities/motorcycle';
+import {MotorcycleService} from '../../services/motorcycle.service';
 
 @Component({
   selector: 'app-motorcycle-card',
@@ -15,7 +15,7 @@ export class MotorcycleCardComponent implements OnInit {
   @Input() selectedMotorcycle: Motorcycle;
   @Output() selectedMotorcycleChange = new EventEmitter();
 
-  constructor(private motorcycleService: MotorcycleService) {
+  constructor() {
   }
 
   ngOnInit(): void {
@@ -23,7 +23,11 @@ export class MotorcycleCardComponent implements OnInit {
 
   selectMotorcycle(): void {
     this.selected = !this.selected;
-    this.selectedMotorcycleChange.emit(this.motorcycle);
+    if (this.selected) {
+      this.selectedMotorcycleChange.emit(this.motorcycle);
+    } else {
+      this.selectedMotorcycleChange.emit(new Motorcycle());
+    }
     this.selectedChange.emit(this.selected);
   }
 

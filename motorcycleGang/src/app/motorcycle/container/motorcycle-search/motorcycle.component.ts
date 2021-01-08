@@ -8,6 +8,7 @@ import {Observable} from 'rxjs';
 import {CustomerService} from '../../../customer/services/customer.service';
 import {Customer} from '../../../entities/customer';
 import {connectableObservableDescriptor} from 'rxjs/internal/observable/ConnectableObservable';
+import {augmentAppWithServiceWorker} from '@angular-devkit/build-angular/src/angular-cli-files/utilities/service-worker';
 
 @Component({
   selector: 'app-motorcycle',
@@ -30,7 +31,6 @@ export class MotorcycleComponent implements OnInit {
   // tslint:disable-next-line:typedef
   ngOnInit() {
     this.getAllCustomers();
-    this.search();
 
     this.registerForm = this.formBuilder.group({
 
@@ -75,7 +75,6 @@ export class MotorcycleComponent implements OnInit {
                 return item;
               }
             });
-            console.log(motorcycle.customer);
           });
 
         },
@@ -108,6 +107,7 @@ export class MotorcycleComponent implements OnInit {
     this.customerService.getCustomers()
       .subscribe(customers => {
           this.customers = customers;
+          this.search();
         }, error => {
           console.log('Could not retrieve customers', error);
         }
