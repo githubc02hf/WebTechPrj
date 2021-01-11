@@ -18,15 +18,16 @@
     <div class="card-info">
       {{customer.email}}
     </div>
-    <div class="card-info">
+    <div class="card-info" >
+      <a [routerLink]="['/motorcycle/motorcycle-edit', customer.motorcycleId]">
       {{customer.motorcycleId}}
+      </a>
     </div>
     <div class="card-info">
       {{customer.appointmentId}}
     </div>
-        <button mat-button>
-            <mat-icon>
-                <a [routerLink]="['/customer/customer-edit', customer]">edit</a></mat-icon>
+        <button mat-button [routerLink]="['/customer/customer-edit', customer]">
+            <mat-icon>edit</mat-icon>
         </button>
         <button mat-button id="delete" (click)="onDelete()">
             <mat-icon>delete</mat-icon>

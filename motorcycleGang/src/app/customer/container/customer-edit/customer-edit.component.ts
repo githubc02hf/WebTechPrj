@@ -83,9 +83,11 @@ export class CustomerEditComponent implements OnInit {
     if (this.customerForm.get('motorcycleId').value!==''){
       this.customer.motorcycleId = parseInt(this.customerForm.get('motorcycleId').value, 10);
     }
+    /*
     if (this.customerForm.get('appointmentId').value!==''){
       this.customer.appointmentId = parseInt(this.customerForm.get('appointmentId').value, 10);
     }
+    */
 
     this.customerService.saveCustomer(this.customer);
   }

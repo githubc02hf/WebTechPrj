@@ -20,8 +20,8 @@ export class DefaultCustomerService implements CustomerService{
       .set('Accept', 'application/json');
     let observable = this.http.get<Customer[]>(this.apiCustomerUrl, {headers});
     observable.subscribe(
-        customers => {
-          this.customerList = customers;
+        customer => {
+          this.customerList = customer;
         },
         err => {
           console.error('Error getting customer', err);
@@ -30,7 +30,7 @@ export class DefaultCustomerService implements CustomerService{
       return observable;
   };
 
-  getMatchingCustomersFromList(pattern: string){
+  getMatchingCustomersFromList(pattern){
     const filterBy = (term) => {
       const termLowerCase = term.toLowerCase()
       return (customer) =>
@@ -41,7 +41,7 @@ export class DefaultCustomerService implements CustomerService{
     return newCustomerList;
   };
 
-  saveCustomer(customer: Customer): void {
+  saveCustomer(customer): void {
     if (this.customerExists(customer)) {
       this.deleteCustomer(customer);
     }
@@ -58,14 +58,13 @@ export class DefaultCustomerService implements CustomerService{
       });
   };
 
-  deleteCustomer(customer: Customer): void {
+  deleteCustomer(customer): void {
     // TODO: delete references to motorcycle and appointment
     //this.removeCustomerAppointment(customer);
     //this.removeCustomerBikeConnection(customer);
     this.http.delete(this.apiCustomerUrl + customer.id)
       .subscribe(
         customer => {
-          console.log(customer);
         },
         err => {
           console.error("Error deleting customer: " + customer, err);
@@ -74,7 +73,8 @@ export class DefaultCustomerService implements CustomerService{
 
     this.updateServiceCustomerList();
   }
-  customerExists(newCustomer: Customer): boolean {
+
+  customerExists(newCustomer): boolean {
     for (const oldCustomer of this.customerList){
       if(oldCustomer.id===newCustomer.id){
         return true;
@@ -86,8 +86,8 @@ export class DefaultCustomerService implements CustomerService{
   updateServiceCustomerList(): void {
     this.getCustomers()
       .subscribe(
-        customers => {
-          this.customerList = customers;
+        customer => {
+          this.customerList = customer;
         },
         err => {
           console.error('Error getting customer', err);

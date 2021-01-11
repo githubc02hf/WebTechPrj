@@ -76,13 +76,6 @@
       "model": "BIG",
       "color": "Black",
       "horsepower": 120
-    },
-    {
-      "id": 12,
-      "brand": "Yamaha",
-      "model": "MT07",
-      "color": "Blue",
-      "horsepower": 600
     }
   ],
   "customer": [
@@ -94,7 +87,7 @@
       "email": "ja.doe@gmx.com",
       "phoneNumber": "004988881111",
       "motorcycleId": 5,
-      "appointmentId": 4
+      "appointmentId": 1
     },
     {
       "id": 3,
@@ -104,7 +97,7 @@
       "email": "jo.doe@web.de",
       "phoneNumber": "12345582",
       "motorcycleId": 2,
-      "appointmentId": 3
+      "appointmentId": 1
     },
     {
       "id": 4,
@@ -114,9 +107,20 @@
       "email": "bikeLover1337@gmail.com",
       "phoneNumber": "004312345982",
       "motorcycleId": 4,
-      "appointmentId": 2
+      "appointmentId": 1
+    },
+    {
+      "id": 1,
+      "firstName": "Max",
+      "lastName": "Mustermann",
+      "gender": "male",
+      "phoneNumber": 4312345678,
+      "email": "max.mustermann@gmail.com",
+      "motorcycleId": 3,
+      "appointmentId": 1
     }
   ],
+  
   "appointments": [
     {
       "id": 1,

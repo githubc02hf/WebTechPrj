@@ -6,22 +6,38 @@
             <div class="column" style="width: 70%;">
                 <mat-card-title>Appointment</mat-card-title>
                 <mat-card-content>
-                    <form 
-                        [formGroup]='appointmentForm'
-                        (submit)='handleSave()'>
+                    <form [formGroup]='appointmentForm' (submit)='handleSave()'>
+
+                        <mat-form-field>
+                            <mat-label>Customer</mat-label>
+                            <mat-select formControlName="customer" required>
+                                <mat-option *ngFor="let customer of customers" [value]="customer"
+                                    (click)="customerSelection(customer)">
+                                    {{customer.firstName}} {{customer.lastName}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="appointmentForm.get('customer').hasError('required')">
+                                Customer is required to create an appointment
+                            </mat-error>
+                        </mat-form-field>
 
                         <h3>Personal Information</h3>
                         <mat-form-field appearance="standard">
                             <mat-label>First Name</mat-label>
-                            <input matInput type="text" formControlName='firstName' required>
+                            <input matInput type="text" formControlName='firstName'>
                         </mat-form-field>
                         <br>
 
                         <mat-form-field appearance="standard">
                             <mat-label>Last Name</mat-label>
-                            <input matInput type="text" formControlName='lastName' required>
-                             </mat-form-field>
+                            <input matInput type="text" formControlName='lastName'>
+                        </mat-form-field>
                         <br>
+
+                        <mat-form-field appearance="standard">
+                            <mat-label>Gender</mat-label>
+                            <input matInput type="text" formControlName='gender'>
+                        </mat-form-field>
 
                         <h3>Contact Information</h3>
                         <mat-form-field appearance="standard">
@@ -34,30 +50,36 @@
 
                         <mat-form-field appearance="standard">
                             <mat-label>E-Mail</mat-label>
-                            <input matInput type="email" placeholder="pat@example.com" formControlName='email' required>
+                            <input matInput type="email" placeholder="pat@example.com" formControlName='email'>
                         </mat-form-field>
                         <br>
 
                         <h3>Appointment information</h3>
-                        <mat-form-field appearance="standard">
+                        <mat-form-field appearance="standard" required>
                             <mat-label>Preferred date</mat-label>
-                            <input matInput [matDatepicker]="picker" formControlName='date'>
+                            <input matInput [matDatepicker]="picker" formControlName='date' disabled required>
                             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                            <mat-datepicker #picker></mat-datepicker>
+                            <mat-datepicker #picker disabled="false"></mat-datepicker>
+                            <mat-error *ngIf="appointmentForm.get('date').hasError('required')">
+                                Preferred date is required
+                            </mat-error>
                         </mat-form-field>
                         <br>
 
                         <mat-form-field appearance="standard">
                             <mat-label>Issue</mat-label>
-                            <mat-select formControlName='issue'>
+                            <mat-select formControlName='issue' required>
                                 <mat-option value="repair">Repair</mat-option>
                                 <mat-option value="safety inspection">Safety Inspection</mat-option>
                                 <mat-option value="tire change">Tire Change</mat-option>
                             </mat-select>
+                            <mat-error *ngIf="appointmentForm.get('issue').hasError('required')">
+                                Issue date is required
+                            </mat-error>
                         </mat-form-field>
 
                         <button mat-raised-button type="submit" [disabled]="!appointmentForm.valid">Submit</button>
-                    </form>                   
+                    </form>
                 </mat-card-content>
             </div>
         </div>
