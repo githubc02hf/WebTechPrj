@@ -24,7 +24,9 @@
       </a>
     </div>
     <div class="card-info">
+      <a [routerLink]="['/appointment/appointment-edit', customer.appointmentId]">
       {{customer.appointmentId}}
+      </a>
     </div>
         <button mat-button [routerLink]="['/customer/customer-edit', customer]">
             <mat-icon>edit</mat-icon>
