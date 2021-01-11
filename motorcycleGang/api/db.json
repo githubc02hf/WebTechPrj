@@ -120,7 +120,8 @@
       "appointmentId": 1
     }
   ],
-  "appointments" : [
+  
+  "appointments": [
     {
       "id": 1,
       "firstName": "Ivica",

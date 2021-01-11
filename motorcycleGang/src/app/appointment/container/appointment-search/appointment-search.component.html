@@ -13,16 +13,17 @@
                 <mat-icon>add</mat-icon>
             </button>
         </a>
-        <button class="edit-button" mat-button [disabled]="selectedRowIndex===-1">
-            <mat-icon>edit</mat-icon>
-        </button>
+        <a [routerLink]="['/appointment/appointment-book', selectedAppointment]" style="color: white;">
+            <button class="edit-button" mat-button [disabled]="selectedRowIndex===-1">
+                <mat-icon>edit</mat-icon>
+            </button>
+        </a>
         <button class="delete-button" mat-button [disabled]="selectedRowIndex===-1"
-                (click)="deleteById(selectedRowIndex)">
+            (click)="deleteById(selectedRowIndex)">
             <mat-icon>delete</mat-icon>
         </button>
     </div>
 </div>
-
 <mat-divider></mat-divider>
 <table mat-table [dataSource]="appointmentList" class="mat-elevation-z8">
     <ng-container matColumnDef="id">
