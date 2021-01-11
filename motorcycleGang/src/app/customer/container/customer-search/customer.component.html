@@ -35,8 +35,8 @@
           </div>
     </mat-card-content>
     <mat-card-actions>
-        <button id="create-button" mat-fab mat-con-button (click)="createCustomer()">
-            <mat-icon><a [routerLink]="['/customer/customer-edit', newCustomer]">add</a></mat-icon>
+        <button id="create-button" [routerLink]="['/customer/customer-edit', newCustomer]" mat-fab mat-con-button (click)="createCustomer()">
+            <mat-icon>add</mat-icon>
         </button>
     </mat-card-actions>
   </mat-card>

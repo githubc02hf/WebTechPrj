@@ -13,11 +13,11 @@ export abstract class CustomerService {
 
   abstract getCustomers(): Observable<Customer[]>;
 
-  abstract getMatchingCustomersFromList(pattern: string): Array<Customer>;
+  abstract getMatchingCustomersFromList(pattern): Array<Customer>;
 
-  abstract saveCustomer(customer: Customer): void;
+  abstract saveCustomer(customer): void;
 
-  abstract deleteCustomer(customer: Customer): void;
+  abstract deleteCustomer(customer): void;
 
 }
 
