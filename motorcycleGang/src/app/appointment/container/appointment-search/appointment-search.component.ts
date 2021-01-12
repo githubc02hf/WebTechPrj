@@ -13,6 +13,8 @@ export class AppointmentSearchComponent implements OnInit {
   searchFieldInput: string;
   appointmentList: Array<Appointment>;
   selectedRowIndex = -1;
+  selectedAppointment: Appointment;
+  selectedAppointmentId: number;
   displayedColumns: string[] = ['id', 'firstName', 'lastName', 'phoneNumber', 'preferredDate', 'issue'];
 
   constructor(private appointmentService: AppointmentService) { 
@@ -28,7 +30,6 @@ export class AppointmentSearchComponent implements OnInit {
       .subscribe(
         appointments => {
           this.appointmentList = appointments;
-          console.log(""+ this.appointmentList.length)
         },
         err => {
           console.error('Error getting appointment', err);
@@ -44,17 +45,18 @@ export class AppointmentSearchComponent implements OnInit {
     this.appointmentList = this.appointmentService.getMatchingAppointmentsFromList(this.searchFieldInput);
   };
 
-  highlight(row) {
-    console.log("row id: " + row.id);
+  selectAppointment(row) {
     if(this.selectedRowIndex === row.id) {
       this.selectedRowIndex = -1;
     } else {
-    this.selectedRowIndex = row.id;
+      this.selectedRowIndex = row.id;
+      this.selectedAppointment = this.appointmentList.find(appointment => appointment.id === row.id);
+      this.selectedAppointmentId = row.id;
     }
   }
 
-  deleteById(id) {
-    this.appointmentService.deleteById(id);
+  deleteAppointment(appointment) {
+    this.appointmentService.deleteAppointment(appointment);
     this.searchForAppointments();
   }
 }

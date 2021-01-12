@@ -1,10 +1,9 @@
+import { Customer } from "./customer";
+
 export class Appointment {
 
     id: number;
-    firstName: string;
-    lastName: string;
-    phoneNumber: number;
-    email: string;
+    customer: Customer;
     preferredDate: string;
     issue: string;
   }
