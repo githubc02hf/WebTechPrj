@@ -135,30 +135,6 @@
       },
       "preferredDate": "25/01/2021",
       "issue": "safety inspection"
-    },
-    {
-      "id": 3,
-      "customer": "",
-      "preferredDate": "01/28/2021",
-      "issue": "repair"
-    },
-    {
-      "id": 4,
-      "customer": "",
-      "preferredDate": "01/12/2021",
-      "issue": "tire change"
-    },
-    {
-      "id": 5,
-      "customer": "",
-      "preferredDate": "01/12/2021",
-      "issue": "repair"
-    },
-    {
-      "id": 2,
-      "customer": "",
-      "preferredDate": "01/12/2021",
-      "issue": "repair"
-    }
+    } 
   ]
 }
