@@ -6,40 +6,45 @@
         <mat-form-field class appearance="outline">
             <mat-label>{{customer.firstName}}</mat-label>
             <mat-hint>First Name</mat-hint>
-            <input matInput formControlName="firstName">
+            <input matInput formControlName="firstName" required>
         </mat-form-field>
         <mat-form-field class appearance="outline">
             <mat-label>{{customer.lastName}}</mat-label>
             <mat-hint>Last Name</mat-hint>
-            <input matInput formControlName="lastName">
+            <input matInput formControlName="lastName" required>
         </mat-form-field>
         <mat-form-field class appearance="outline">
             <mat-label>{{customer.gender}}</mat-label>
             <mat-hint>Gender</mat-hint>
-            <input matInput formControlName="gender">
+            <mat-select formControlName="gender" required>
+                <mat-option value="male">male</mat-option>
+                <mat-option value="female">female</mat-option>
+                <mat-option value="other">other</mat-option>
+            </mat-select>
         </mat-form-field>
         <mat-form-field class appearance="outline">
             <mat-label>{{customer.phoneNumber}}</mat-label>
             <mat-hint>Phone Number</mat-hint>
-            <input matInput formControlName="phoneNumber">
+            <input matInput formControlName="phoneNumber" required phone>
+            <mat-error
+            *ngIf="customerForm?.get('phoneNumber').hasError('phone')">
+            Phone number must be between 4 to 10 digis long.
+          </mat-error>
         </mat-form-field>
         <mat-form-field class appearance="outline">
             <mat-label>{{customer.email}}</mat-label>
             <mat-hint>Email</mat-hint>
-            <input matInput formControlName="email">
+            <input matInput formControlName="email" email required>
         </mat-form-field>
-        <mat-form-field class appearance="outline">
+        <mat-form-field class appearance="outline" >
             <mat-label>{{customer.motorcycleId}}</mat-label>
             <mat-hint>Motorcycle ID</mat-hint>
-            <input matInput formControlName="motorcycleId">
+            <mat-select formControlName="motorcycleId" required>
+                <mat-option *ngFor="let motorcycle of motorcycleList" [value]="motorcycle.id">
+                    {{motorcycle.id}}
+                </mat-option>
+            </mat-select>
         </mat-form-field>
-        <!-- 
-        <mat-form-field class appearance="outline">
-            <mat-label>{{customer.appointmentId}}</mat-label>
-            <mat-hint>Appointment ID</mat-hint>
-            <input matInput formControlName="appointmentId">
-        </mat-form-field>
-        -->
-        <button mat-raised-button color="primary" (click)="onSave()" type="submit">Save</button>
+        <button mat-raised-button color="primary" [disabled]="!customerForm.valid" (click)="onSave()" type="submit">Save</button>
     </form>
 </div>

@@ -40,6 +40,7 @@ import { CustomerCardComponent } from './customer/components/customer-card/custo
 import { CustomerEditComponent } from './customer/container/customer-edit/customer-edit.component';
 import { MatConfirmDialogComponent } from './mat-confirm-dialog/mat-confirm-dialog.component';
 import { AppointmentSearchComponent } from './appointment/container/appointment-search/appointment-search.component';
+import {PhoneNumberDirective } from './shared/validation/phone-number.directive';
 
 @NgModule({
   imports: [
@@ -84,7 +85,8 @@ import { AppointmentSearchComponent } from './appointment/container/appointment-
     CustomerCardComponent,
     CustomerEditComponent,
     MatConfirmDialogComponent,
-    AppointmentSearchComponent
+    AppointmentSearchComponent,
+    PhoneNumberDirective 
   ],
   providers: [MatNativeDateModule],
   bootstrap: [AppComponent]

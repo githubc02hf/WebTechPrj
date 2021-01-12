@@ -54,8 +54,8 @@
         name="horsepower"
         [(ngModel)]="horsepower"
         placeholder="e.g. 76"
-        required
         number
+        required
       />
       <mat-error
         *ngIf="editForm?.controls['horsepower']?.hasError('required')">

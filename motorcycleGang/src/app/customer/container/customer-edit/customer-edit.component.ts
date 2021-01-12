@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder,  FormGroup } from '@angular/forms';
+import { FormBuilder,  FormControl,  FormGroup, Validators } from '@angular/forms';
 import { MatDialog} from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { Customer } from 'src/app/entities/customer';
 import { DialogService } from 'src/app/shared/validation/dialog.service';
 import { CustomerService } from '../../services/customer.service';
 import { Location } from '@angular/common';
+import { Motorcycle } from 'src/app/entities/motorcycle';
+import { MotorcycleService } from 'src/app/motorcycle/services/motorcycle.service';
+import { HttpParams } from '@angular/common/http';
+import { PhoneNumberDirective } from 'src/app/shared/validation/phone-number.directive';
 
 @Component({
   selector: 'app-customer-edit',
@@ -15,15 +19,28 @@ import { Location } from '@angular/common';
 export class CustomerEditComponent implements OnInit {
 
   customer: Customer;
+  motorcycleList: Array<Motorcycle>;
 
   constructor(
     private route: ActivatedRoute,
     private customerService: CustomerService,
     private formBuilder: FormBuilder,
     private dialogService: DialogService,
+    private motorcycleService: MotorcycleService,
     public dialog: MatDialog,
     private location: Location
-  ) { }
+  ) { 
+    this.motorcycleService.find(new HttpParams())
+    .subscribe(
+      motorcyclesDB => {
+        this.motorcycleList = motorcyclesDB;
+      },
+      err => {
+        console.error('Error getting customer', err);
+      }
+    )
+
+  }
 
   customerForm: FormGroup;
 
@@ -38,7 +55,7 @@ export class CustomerEditComponent implements OnInit {
       this.customer.firstName = params.get('firstName');
       this.customer.lastName = params.get('lastName');
       this.customer.gender = params.get('gender');
-      this.customer.phoneNumber = +params.get('phoneNumber');
+      this.customer.phoneNumber = params.get('phoneNumber');
       this.customer.email = params.get('email');
       this.customer.motorcycleId = +params.get('motorcycleId');
       this.customer.appointmentId = +params.get('appointmentId');
@@ -83,11 +100,6 @@ export class CustomerEditComponent implements OnInit {
     if (this.customerForm.get('motorcycleId').value!==''){
       this.customer.motorcycleId = parseInt(this.customerForm.get('motorcycleId').value, 10);
     }
-    /*
-    if (this.customerForm.get('appointmentId').value!==''){
-      this.customer.appointmentId = parseInt(this.customerForm.get('appointmentId').value, 10);
-    }
-    */
 
     this.customerService.saveCustomer(this.customer);
   }

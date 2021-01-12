@@ -5,7 +5,7 @@ export class Customer {
     firstName: string;
     lastName: string;
     gender: string;
-    phoneNumber: number;
+    phoneNumber: string;
     email: string;
     motorcycleId: number;
     appointmentId: number;
