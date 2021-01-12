@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder,  FormGroup } from '@angular/forms';
+import { FormBuilder,  FormControl,  FormGroup, Validators } from '@angular/forms';
 import { MatDialog} from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { Customer } from 'src/app/entities/customer';
@@ -9,6 +9,7 @@ import { Location } from '@angular/common';
 import { Motorcycle } from 'src/app/entities/motorcycle';
 import { MotorcycleService } from 'src/app/motorcycle/services/motorcycle.service';
 import { HttpParams } from '@angular/common/http';
+import { PhoneNumberDirective } from 'src/app/shared/validation/phone-number.directive';
 
 @Component({
   selector: 'app-customer-edit',
@@ -28,16 +29,22 @@ export class CustomerEditComponent implements OnInit {
     private motorcycleService: MotorcycleService,
     public dialog: MatDialog,
     private location: Location
-  ) { }
+  ) { 
+    this.motorcycleService.find(new HttpParams())
+    .subscribe(
+      motorcyclesDB => {
+        this.motorcycleList = motorcyclesDB;
+      },
+      err => {
+        console.error('Error getting customer', err);
+      }
+    )
+
+  }
 
   customerForm: FormGroup;
 
   ngOnInit(): void {
-    this.motorcycleService.find(new HttpParams())
-    .subscribe(motorcycle => {
-      this.motorcycleList = motorcycle;
-    });
-
     this.fillCustomerFormField();
   }
 
@@ -93,11 +100,6 @@ export class CustomerEditComponent implements OnInit {
     if (this.customerForm.get('motorcycleId').value!==''){
       this.customer.motorcycleId = parseInt(this.customerForm.get('motorcycleId').value, 10);
     }
-    /*
-    if (this.customerForm.get('appointmentId').value!==''){
-      this.customer.appointmentId = parseInt(this.customerForm.get('appointmentId').value, 10);
-    }
-    */
 
     this.customerService.saveCustomer(this.customer);
   }
