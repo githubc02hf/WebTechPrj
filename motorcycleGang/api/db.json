@@ -120,16 +120,45 @@
       "appointmentId": 1
     }
   ],
-  
   "appointments": [
     {
       "id": 1,
-      "firstName": "Ivica",
-      "lastName": "Budimir",
-      "phoneNumber": "345435",
-      "email": "pat@dsat",
-      "preferredDate": "27/12/2020",
+      "customer": {
+        "id": 3,
+        "firstName": "John",
+        "lastName": "Doe",
+        "gender": "male",
+        "email": "jo.doe@web.de",
+        "phoneNumber": "12345582",
+        "motorcycleId": 2,
+        "appointmentId": 1
+      },
+      "preferredDate": "25/01/2021",
+      "issue": "safety inspection"
+    },
+    {
+      "id": 3,
+      "customer": "",
+      "preferredDate": "01/28/2021",
+      "issue": "repair"
+    },
+    {
+      "id": 4,
+      "customer": "",
+      "preferredDate": "01/12/2021",
       "issue": "tire change"
+    },
+    {
+      "id": 5,
+      "customer": "",
+      "preferredDate": "01/12/2021",
+      "issue": "repair"
+    },
+    {
+      "id": 2,
+      "customer": "",
+      "preferredDate": "01/12/2021",
+      "issue": "repair"
     }
   ]
 }

@@ -50,7 +50,7 @@ const routes: Routes = [
         component: AppointmentSearchComponent
       },
       {
-        path: 'appointment-book',
+        path: 'appointment-book/:id',
         component: AppointmentComponent
       }
     ]

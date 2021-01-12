@@ -41,15 +41,54 @@ export class DefaultAppointmentService implements AppointmentService {
     return newAppointmentList;
   };
 
-  deleteById(id): void {
+  saveAppointment(appointment): void {
+    console.log(""+ this.appointmentExists(appointment));
+    if (this.appointmentExists(appointment)) {
+      this.deleteAppointment(appointment);
+    }
+    const headers = new HttpHeaders()
+      .set('Accept', 'application/json');
+      this.http
+      .post<Appointment[]>(this.apiAppointmentUrl, appointment, {headers})
+      .subscribe(
+        appointment => {
+            console.log(appointment);
+        },
+        err => {
+          console.error('Error saving appointment', err);
+      });
+  };
+
+  deleteAppointment(appointment): void {
     this.http
-      .delete(this.apiAppointmentUrl + id)
+      .delete(this.apiAppointmentUrl + appointment.id)
       .subscribe(
         appointment => {
         },
         err => {
-          console.error('Could not delete appointment with id ' + id, err);
+          console.error('Could not delete appointment with id ' + appointment.id, err);
         }
       );
+  }
+
+  appointmentExists(newAppointment): boolean {
+    for (const oldAppointment of this.appointmentList){
+      if(oldAppointment.id===newAppointment.id){
+        return true;
+      }
+    }
+    return false;
+  }
+
+  updateAppointmentList(): void {
+    this.getAppointments()
+      .subscribe(
+        appointments => {
+          this.appointmentList = appointments;
+        },
+        err => {
+          console.error('Error getting appointment');
+        }
+      )
   }
 }
