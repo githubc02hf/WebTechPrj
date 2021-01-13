@@ -37,27 +37,20 @@ export class DefaultAppointmentService implements AppointmentService {
         Object.keys(appointment)
           .some(prop => appointment[prop].toString().toLowerCase().indexOf(termLowerCase) !== -1)
     }
-    var newAppointmentList = this.appointmentList.filter(filterBy(pattern));
+    var newAppointmentList = this.appointmentList
     return newAppointmentList;
   };
 
-  saveAppointment(appointment): void {
-    console.log(""+ this.appointmentExists(appointment));
+  saveAppointment(appointment): Observable<Appointment> {
     if (this.appointmentExists(appointment)) {
       this.deleteAppointment(appointment);
     }
     const headers = new HttpHeaders()
       .set('Accept', 'application/json');
-      this.http
-      .post<Appointment[]>(this.apiAppointmentUrl, appointment, {headers})
-      .subscribe(
-        appointment => {
-            console.log(appointment);
-        },
-        err => {
-          console.error('Error saving appointment', err);
-      });
-  };
+    return  this.http
+                .post<Appointment>(this.apiAppointmentUrl, appointment, {headers});
+    
+  }
 
   deleteAppointment(appointment): void {
     this.http

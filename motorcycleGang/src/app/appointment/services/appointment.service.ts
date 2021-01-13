@@ -15,7 +15,7 @@ export abstract class AppointmentService {
 
   abstract getMatchingAppointmentsFromList(pattern: string): Array<Appointment>;
 
-  abstract saveAppointment(appointment): void; 
+  abstract saveAppointment(appointment): Observable<Appointment>; 
 
   abstract deleteAppointment(appointment): void;
 

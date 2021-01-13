@@ -30,6 +30,7 @@ export class AppointmentSearchComponent implements OnInit {
       .subscribe(
         appointments => {
           this.appointmentList = appointments;
+          this.appointmentList.sort
         },
         err => {
           console.error('Error getting appointment', err);

@@ -25,19 +25,16 @@ export class AppointmentComponent implements OnInit {
 
   constructor(private http: HttpClient, private formBuilder: FormBuilder, private customerService: CustomerService, private appointmentService: AppointmentService, private route: ActivatedRoute) {
     this.customerService.getCustomers()
-      .subscribe(
-        customers => {
-          this.customers = customers;
-        },
-        err => {
-          console.error('Error while getting customer', err);
-        }
-      )
+      .subscribe(customers => {
+        this.customers = customers.filter(function(customer) {
+          return customer.appointmentId === 0;
+        })
+      });
   }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      if (params.get('id')  === '0') {
+      if (params.get('id') === '0') {
         return;
       } else {
         this.isEdit = true;
@@ -47,7 +44,7 @@ export class AppointmentComponent implements OnInit {
     });
 
     this.appointmentForm = this.formBuilder.group({
-      customer: new FormControl(''),
+      customer: new FormControl(null),
       firstName: new FormControl({ value: '', disabled: true }),
       lastName: new FormControl({ value: '', disabled: true }),
       gender: new FormControl({ value: '', disabled: true }),
@@ -68,10 +65,23 @@ export class AppointmentComponent implements OnInit {
       this.appointmentForm.get('date').markAsTouched();
       this.appointmentForm.get('issue').markAsTouched();
       return;
-    } 
+    }
 
-    const appointment = this.createNewAppointment();
-    this.appointmentService.saveAppointment( appointment );
+    var appointment = this.createNewAppointment();
+    this.appointmentService.saveAppointment(appointment)
+        .subscribe(
+      newAppointment => {
+          console.log(newAppointment.id);
+          appointment.customer.appointmentId = newAppointment.id;
+          if (!this.isEdit) {
+            this.customerService.saveCustomer(appointment.customer);
+          }
+          console.log(appointment);
+      },
+      err => {
+        console.error('Error saving appointment', err);
+    });
+    
     this.appointmentForm.reset();
   }
 
@@ -95,26 +105,27 @@ export class AppointmentComponent implements OnInit {
     this.appointmentForm.get('phoneNumber').setValue(this.selectedCustomer.phoneNumber);
     this.appointmentForm.get('email').setValue(this.selectedCustomer.email);
   }
- 
+
   fillFieldsByAppointmentId(id) {
     this.appointmentService.getAppointments()
-    .subscribe(
-      appointments => {
-        this.appointments = appointments;
-        this.appointmentToEdit = this.appointments.find(appointment => appointment.id === id);
-        this.fillFields(this.appointmentToEdit);
-      }, 
-      err => {
-        console.log('Error while getting appointment', err);
-      }
-    );
+      .subscribe(
+        appointments => {
+          this.appointments = appointments;
+          this.appointmentToEdit = this.appointments.find(appointment => appointment.id === id);
+          this.fillFields(this.appointmentToEdit);
+        },
+        err => {
+          console.log('Error while getting appointment', err);
+        }
+      );
   }
 
   fillFields(appointmentToEdit) {
-    this.appointmentForm.patchValue({
-      customer: appointmentToEdit.customer
-    });
-    this.appointmentForm.get('customer').setValue(appointmentToEdit.customer);
+    console.log(appointmentToEdit.customer);
+    this.customers[0] = appointmentToEdit.customer;
+    this.appointmentForm.controls["customer"].setValue(this.customers[0], {onlySelf: true});
+    this.appointmentForm.get('customer').disable();
+    //this.appointmentForm.get('customer').setValue([appointmentToEdit.customer]);
     this.appointmentForm.get('firstName').setValue(appointmentToEdit.customer.firstName);
     this.appointmentForm.get('lastName').setValue(appointmentToEdit.customer.lastName);
     this.appointmentForm.get('gender').setValue(appointmentToEdit.customer.gender);

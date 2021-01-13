@@ -12,8 +12,12 @@
 }
 
 .mat-elevation-z8 {
-    width: 98%;
+    width: 99%;
     margin: 10px;
+}
+
+tr:hover {
+    background-color: gray;
 }
 
 .highlight {
