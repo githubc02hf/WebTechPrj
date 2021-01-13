@@ -38,6 +38,9 @@ export class MotorcycleEditComponent implements OnInit {
 
   editSelected(): void {
     this.selectedMotorcycle.brand = this.brand;
+    this.selectedMotorcycle.model = this.model;
+    this.selectedMotorcycle.color = this.color;
+    this.selectedMotorcycle.horsepower = this.horsepower;
 
     this.motorcycleService.deleteById(this.id);
     const motorcycle = this.createMotorcycle();
