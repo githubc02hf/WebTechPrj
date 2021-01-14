@@ -1,19 +1,23 @@
 # WebTechPrj
-Project for Campus 02 Graz course: Web Technologien
+Project for FH Campus 02 Graz course: "Web Technologien"
 
-Project:
+**Project:** 
 Motorcycle Gang
 
-Collaborators:
+**Collaborators**
 
-Ivica Budimir
-Henrik Funke
-Patrick Khair
+- Ivica Budimir _[Entity: Appointment]_ <br>
+- Henrik Funke _[Entity: Customer]_ <br>
+- Patrick Khair _[Entity: Motorcycle]_
 
+**UI component library:** 
+Angular Material UI (https://material.angular.io/)
+
+---
 
 ## How to JSON-server
 
-Install JSON-server --> https://github.com/typicode/json-server
+Install JSON-server: https://github.com/typicode/json-server
 
 Sample db.json file:
 
@@ -53,7 +57,7 @@ REST-call for entity employees:
 localhost:3000/employees/
 ```
 
-For insert use POST with JSON in body like:
+For insert use "POST" with JSON in body like:
 ```
 {
     "id": 5,
@@ -63,9 +67,9 @@ For insert use POST with JSON in body like:
 }
 ```
 
-For delete use the same call as a DELETE and append an id:
+For delete use the same call as a "DELETE" and append an id:
 ```
 localhost:3000/employees/{id}
 ```
 
-For select use the same an append an id if you only want one entry. If you want all entries, do not append an id.
+For select use the same and append an id if you only want one entry. If you want all entries, do not append an id.
