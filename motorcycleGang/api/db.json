@@ -9,10 +9,10 @@
     },
     {
       "id": 2,
-      "brand": "Yamaha",
-      "model": "FZ06",
-      "color": "Silver",
-      "horsepower": 98
+      "brand": "Spongebob Bike",
+      "model": "Vice City",
+      "color": "Black",
+      "horsepower": 120
     },
     {
       "id": 3,
@@ -76,10 +76,122 @@
       "model": "BIG",
       "color": "Black",
       "horsepower": 120
+    },
+    {
+      "id": 12,
+      "brand": "Patrick",
+      "model": "Bike",
+      "color": "Yellow",
+      "horsepower": 76
+    },
+    {
+      "id": 13,
+      "brand": "Naruto",
+      "model": "Uber",
+      "color": "Black",
+      "horsepower": 120
+    },
+    {
+      "id": 14,
+      "brand": "Kawasaki",
+      "model": "Ninja 70",
+      "color": "Brown",
+      "horsepower": 66
+    },
+    {
+      "id": 15,
+      "brand": "Yamaha",
+      "model": "XzU",
+      "color": "White",
+      "horsepower": 14
+    },
+    {
+      "id": 16,
+      "brand": "Opel",
+      "model": "Astra",
+      "color": "Silver",
+      "horsepower": 46
+    },
+    {
+      "id": 17,
+      "brand": "Fish",
+      "model": "Mac",
+      "color": "Green",
+      "horsepower": 48
+    },
+    {
+      "id": 18,
+      "brand": "Honda",
+      "model": "Hornet 600",
+      "color": "Silver",
+      "horsepower": 100
+    },
+    {
+      "id": 19,
+      "brand": "Ninja",
+      "model": "Turtle",
+      "color": "Black",
+      "horsepower": 190
+    },
+    {
+      "id": 20,
+      "brand": "KTM von Spongebob",
+      "model": "Duke 600",
+      "color": "Green",
+      "horsepower": 98
     }
   ],
-
-  "customer": [ 
+  "customer": [
+    {
+      "id": 16,
+      "firstName": "Abc",
+      "lastName": "Tester",
+      "gender": "other",
+      "phoneNumber": "004312345582",
+      "email": "abc.testr@web.de",
+      "motorcycleId": 5,
+      "appointmentId": null
+    },
+    {
+      "id": 17,
+      "firstName": "Maxi",
+      "lastName": "Musterfrau",
+      "gender": "female",
+      "email": "max.musermann@gmail.com",
+      "phoneNumber": "004912345978",
+      "motorcycleId": 4,
+      "appointmentId": null
+    },
+    {
+      "id": 18,
+      "firstName": "Hans",
+      "lastName": "Peter",
+      "gender": "male",
+      "email": "h.p@gmx.com",
+      "phoneNumber": "004911111111",
+      "motorcycleId": 3,
+      "appointmentId": null
+    },
+    {
+      "id": 19,
+      "firstName": "Gernot",
+      "lastName": "Hans",
+      "gender": "male",
+      "email": "g.h@gmx.com",
+      "phoneNumber": "00491144511",
+      "motorcycleId": 2,
+      "appointmentId": null
+    },
+    {
+      "id": 20,
+      "firstName": "Dame",
+      "lastName": "Frau",
+      "gender": "female",
+      "email": "d.f@gmx.com",
+      "phoneNumber": "00331144511",
+      "motorcycleId": 1,
+      "appointmentId": null
+    },
     {
       "id": 1,
       "firstName": "Max",
@@ -87,59 +199,155 @@
       "gender": "male",
       "email": "max.mustermann@gmail.com",
       "phoneNumber": "43534545",
-      "motorcycleId": 6,
-      "appointmentId": 2
+      "motorcycleId": 20,
+      "appointmentId": 1
     },
     {
       "id": 2,
-      "firstName": "Jane",
+      "firstName": "Janer",
       "lastName": "Doe",
       "gender": "female",
       "email": "ja.doe@gmx.com",
-      "phoneNumber": "004988881111",
-      "motorcycleId": 5,
-      "appointmentId": 0
+      "phoneNumber": "00498331111",
+      "motorcycleId": 19,
+      "appointmentId": 2
     },
     {
       "id": 3,
+      "firstName": "Doris",
+      "lastName": "Dodd",
+      "gender": "Female",
+      "phoneNumber": "004312345582",
+      "email": "dd@web.de",
+      "motorcycleId": 18,
+      "appointmentId": 3
+    },
+    {
+      "id": 4,
+      "firstName": "Lady",
+      "lastName": "Krachermann",
+      "gender": "other",
+      "email": "ladukracher@gmail.com",
+      "phoneNumber": "0043534545",
+      "motorcycleId": 17,
+      "appointmentId": 4
+    },
+    {
+      "id": 5,
+      "firstName": "kola",
+      "lastName": "pepsi",
+      "gender": "other",
+      "email": "fanta@gmx.com",
+      "phoneNumber": "00493381111",
+      "motorcycleId": 16,
+      "appointmentId": 5
+    },
+    {
+      "id": 6,
       "firstName": "John",
       "lastName": "Doe",
       "gender": "male",
       "phoneNumber": "12345582",
       "email": "jo.doe@web.de",
-      "motorcycleId": 2,
-      "appointmentId": 1
+      "motorcycleId": 15,
+      "appointmentId": 6
     },
     {
-      "id": 4,
+      "id": 7,
+      "firstName": "Motor",
+      "lastName": "Radler",
+      "gender": "male",
+      "email": "motoradler@gmail.com",
+      "phoneNumber": "0043534545",
+      "motorcycleId": 14,
+      "appointmentId": 7
+    },
+    {
+      "id": 8,
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "gender": "female",
+      "email": "ja.doe@gmx.com",
+      "phoneNumber": "004988881111",
+      "motorcycleId": 13,
+      "appointmentId": 8
+    },
+    {
+      "id": 9,
+      "firstName": "Karla",
+      "lastName": "Krauss",
+      "gender": "female",
+      "phoneNumber": "004412345582",
+      "email": "kk.kk@web.de",
+      "motorcycleId": 12,
+      "appointmentId": 9
+    },
+    {
+      "id": 10,
+      "firstName": "Horst",
+      "lastName": "Mustermann",
+      "gender": "male",
+      "email": "h.mmu@gmail.com",
+      "phoneNumber": "0043534545",
+      "motorcycleId": 11,
+      "appointmentId": 10
+    },
+    {
+      "id": 11,
+      "firstName": "Ivica",
+      "lastName": "Lapn",
+      "gender": "male",
+      "email": "bruda@gmx.com",
+      "phoneNumber": "0049844111",
+      "motorcycleId": 10,
+      "appointmentId": 11
+    },
+    {
+      "id": 12,
+      "firstName": "dora",
+      "lastName": "bae",
+      "gender": "female",
+      "phoneNumber": "004312345582",
+      "email": "d.b@web.de",
+      "motorcycleId": 9,
+      "appointmentId": 12
+    },
+    {
+      "id": 13,
       "firstName": "bike",
-      "lastName": "lover",
-      "gender": "other",
-      "phoneNumber": "067645353",
-      "email": "bikeLover1337@gamil.com",
-      "motorcycleId": 2,
-      "appointmentId": 0
+      "lastName": "loverin",
+      "gender": "feher",
+      "phoneNumber": "012367645353",
+      "email": "bikeLoverin1337@gamil.com",
+      "motorcycleId": 8,
+      "appointmentId": 13
+    },
+    {
+      "id": 14,
+      "firstName": "Ernst",
+      "lastName": "Trump",
+      "gender": "male",
+      "email": "et.pp@gmail.com",
+      "phoneNumber": "0044423534545",
+      "motorcycleId": 7,
+      "appointmentId": 14
+    },
+    {
+      "id": 15,
+      "firstName": "biber",
+      "lastName": "gaga",
+      "gender": "female",
+      "email": "b.g@gmx.com",
+      "phoneNumber": "004983381111",
+      "motorcycleId": 6,
+      "appointmentId": 15
     }
   ],
-
   "appointments": [
     {
       "id": 1,
-      "customer": {
-        "id": 3,
-        "firstName": "John",
-        "lastName": "Doe",
-        "gender": "male",
-        "email": "jo.doe@web.de",
-        "phoneNumber": "12345582",
-        "motorcycleId": 2,
-        "appointmentId": 1
-      },
-      "preferredDate": "25/01/2021",
-      "issue": "safety inspection"
-    },
-    {
-      "id": 2,
+      "firstName": "Max",
+      "lastName": "Mustermann",
       "customer": {
         "id": 1,
         "firstName": "Max",
@@ -147,11 +355,249 @@
         "gender": "male",
         "email": "max.mustermann@gmail.com",
         "phoneNumber": "43534545",
-        "motorcycleId": 6,
-        "appointmentId": 2
+        "motorcycleId": 20,
+        "appointmentId": null
       },
-      "preferredDate": "26/07/2021",
+      "preferredDate": "01/15/2021",
+      "issue": "tire change"
+    },
+    {
+      "id": 2,
+      "firstName": "Janer",
+      "lastName": "Doe",
+      "customer": {
+        "id": 2,
+        "firstName": "Janer",
+        "lastName": "Doe",
+        "gender": "female",
+        "email": "ja.doe@gmx.com",
+        "phoneNumber": "00498331111",
+        "motorcycleId": 19,
+        "appointmentId": null
+      },
+      "preferredDate": "01/21/2021",
+      "issue": "safety inspection"
+    },
+    {
+      "id": 3,
+      "firstName": "Doris",
+      "lastName": "Dodd",
+      "customer": {
+        "id": 3,
+        "firstName": "Doris",
+        "lastName": "Dodd",
+        "gender": "Female",
+        "phoneNumber": "004312345582",
+        "email": "dd@web.de",
+        "motorcycleId": 18,
+        "appointmentId": null
+      },
+      "preferredDate": "01/28/2021",
+      "issue": "tire change"
+    },
+    {
+      "id": 4,
+      "firstName": "Lady",
+      "lastName": "Krachermann",
+      "customer": {
+        "id": 4,
+        "firstName": "Lady",
+        "lastName": "Krachermann",
+        "gender": "other",
+        "email": "ladukracher@gmail.com",
+        "phoneNumber": "0043534545",
+        "motorcycleId": 17,
+        "appointmentId": null
+      },
+      "preferredDate": "03/05/2021",
+      "issue": "safety inspection"
+    },
+    {
+      "id": 5,
+      "firstName": "kola",
+      "lastName": "pepsi",
+      "customer": {
+        "id": 5,
+        "firstName": "kola",
+        "lastName": "pepsi",
+        "gender": "other",
+        "email": "fanta@gmx.com",
+        "phoneNumber": "00493381111",
+        "motorcycleId": 16,
+        "appointmentId": null
+      },
+      "preferredDate": "11/28/2025",
+      "issue": "safety inspection"
+    },
+    {
+      "id": 6,
+      "firstName": "John",
+      "lastName": "Doe",
+      "customer": {
+        "id": 6,
+        "firstName": "John",
+        "lastName": "Doe",
+        "gender": "male",
+        "phoneNumber": "12345582",
+        "email": "jo.doe@web.de",
+        "motorcycleId": 15,
+        "appointmentId": null
+      },
+      "preferredDate": "01/16/2021",
+      "issue": "tire change"
+    },
+    {
+      "id": 7,
+      "firstName": "Motor",
+      "lastName": "Radler",
+      "customer": {
+        "id": 7,
+        "firstName": "Motor",
+        "lastName": "Radler",
+        "gender": "male",
+        "email": "motoradler@gmail.com",
+        "phoneNumber": "0043534545",
+        "motorcycleId": 14,
+        "appointmentId": null
+      },
+      "preferredDate": "02/16/2021",
+      "issue": "safety inspection"
+    },
+    {
+      "id": 8,
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "customer": {
+        "id": 8,
+        "firstName": "Jane",
+        "lastName": "Doe",
+        "gender": "female",
+        "email": "ja.doe@gmx.com",
+        "phoneNumber": "004988881111",
+        "motorcycleId": 13,
+        "appointmentId": null
+      },
+      "preferredDate": "01/29/2021",
+      "issue": "tire change"
+    },
+    {
+      "id": 9,
+      "firstName": "Karla",
+      "lastName": "Krauss",
+      "customer": {
+        "id": 9,
+        "firstName": "Karla",
+        "lastName": "Krauss",
+        "gender": "female",
+        "phoneNumber": "004412345582",
+        "email": "kk.kk@web.de",
+        "motorcycleId": 12,
+        "appointmentId": null
+      },
+      "preferredDate": "01/09/2021",
       "issue": "repair"
+    },
+    {
+      "id": 10,
+      "firstName": "Horst",
+      "lastName": "Mustermann",
+      "customer": {
+        "id": 10,
+        "firstName": "Horst",
+        "lastName": "Mustermann",
+        "gender": "male",
+        "email": "h.mmu@gmail.com",
+        "phoneNumber": "0043534545",
+        "motorcycleId": 11,
+        "appointmentId": null
+      },
+      "preferredDate": "04/06/2021",
+      "issue": "safety inspection"
+    },
+    {
+      "id": 11,
+      "firstName": "Ivica",
+      "lastName": "Lapn",
+      "customer": {
+        "id": 11,
+        "firstName": "Ivica",
+        "lastName": "Lapn",
+        "gender": "male",
+        "email": "bruda@gmx.com",
+        "phoneNumber": "0049844111",
+        "motorcycleId": 10,
+        "appointmentId": null
+      },
+      "preferredDate": "01/31/2021",
+      "issue": "safety inspection"
+    },
+    {
+      "id": 12,
+      "firstName": "dora",
+      "lastName": "bae",
+      "customer": {
+        "id": 12,
+        "firstName": "dora",
+        "lastName": "bae",
+        "gender": "female",
+        "phoneNumber": "004312345582",
+        "email": "d.b@web.de",
+        "motorcycleId": 9,
+        "appointmentId": null
+      },
+      "preferredDate": "05/11/2021",
+      "issue": "safety inspection"
+    },
+    {
+      "id": 13,
+      "firstName": "bike",
+      "lastName": "loverin",
+      "customer": {
+        "id": 13,
+        "firstName": "bike",
+        "lastName": "loverin",
+        "gender": "feher",
+        "phoneNumber": "012367645353",
+        "email": "bikeLoverin1337@gamil.com",
+        "motorcycleId": 8,
+        "appointmentId": null
+      },
+      "preferredDate": "07/15/2021",
+      "issue": "repair"
+    },
+    {
+      "id": 14,
+      "firstName": "Ernst",
+      "lastName": "Trump",
+      "customer": {
+        "id": 14,
+        "firstName": "Ernst",
+        "lastName": "Trump",
+        "gender": "male",
+        "email": "et.pp@gmail.com",
+        "phoneNumber": "0044423534545",
+        "motorcycleId": 7,
+        "appointmentId": null
+      },
+      "preferredDate": "11/20/2031",
+      "issue": "safety inspection"
+    },
+    {
+      "id": 15,
+      "firstName": "biber",
+      "lastName": "gaga",
+      "customer": {
+        "id": 15,
+        "firstName": "biber",
+        "lastName": "gaga",
+        "gender": "female",
+        "email": "b.g@gmx.com",
+        "phoneNumber": "004983381111",
+        "motorcycleId": 6,
+        "appointmentId": null
+      },
+      "preferredDate": "08/09/2021",
+      "issue": "tire change"
     }
   ]
 }
