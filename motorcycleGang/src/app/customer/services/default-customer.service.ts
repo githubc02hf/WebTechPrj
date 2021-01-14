@@ -35,7 +35,8 @@ export class DefaultCustomerService implements CustomerService{
       const termLowerCase = term.toLowerCase()
       return (customer) =>
         Object.keys(customer)
-          .some(prop => customer[prop].toString().toLowerCase().indexOf(termLowerCase) !== -1)
+          .some(prop => 
+            customer[prop]!== null && customer[prop].toString().toLowerCase().indexOf(termLowerCase) !== -1)
     }
     var newCustomerList = this.customerList.filter(filterBy(pattern));
     return newCustomerList;
@@ -59,16 +60,13 @@ export class DefaultCustomerService implements CustomerService{
   };
 
   deleteCustomer(customer): void {
-    // TODO: delete references to motorcycle and appointment
-    //this.removeCustomerAppointment(customer);
-    //this.removeCustomerBikeConnection(customer);
     this.http.delete(this.apiCustomerUrl + customer.id)
       .subscribe(
         customer => {
         },
-        err => {
-          console.error("Error deleting customer: " + customer, err);
-        }
+        //err => {
+          //console.error("Error deleting customer: " + customer, err);
+        //}
       );
 
     this.updateServiceCustomerList();

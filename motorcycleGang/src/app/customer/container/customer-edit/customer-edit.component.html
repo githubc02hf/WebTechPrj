@@ -37,7 +37,7 @@
             <input matInput formControlName="email" email required>
         </mat-form-field>
         <mat-form-field class appearance="outline" >
-            <mat-label>{{customer.motorcycleId}}</mat-label>
+            <!-- <mat-label>{{customer.motorcycleId}}</mat-label> -->
             <mat-hint>Motorcycle ID</mat-hint>
             <mat-select formControlName="motorcycleId" required>
                 <mat-option *ngFor="let motorcycle of motorcycleList" [value]="motorcycle.id">

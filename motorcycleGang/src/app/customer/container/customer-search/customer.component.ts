@@ -24,7 +24,7 @@ export class CustomerComponent implements OnInit {
     this.newCustomer.phoneNumber = "";
     this.newCustomer.email = "";
     this.newCustomer.motorcycleId = 0;
-    this.newCustomer.appointmentId = 0;
+    this.newCustomer.appointmentId = undefined;
   }
 
   ngOnInit(): void {
