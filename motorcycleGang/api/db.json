@@ -143,56 +143,6 @@
   ],
   "customer": [
     {
-      "id": 16,
-      "firstName": "Abc",
-      "lastName": "Tester",
-      "gender": "other",
-      "phoneNumber": "004312345582",
-      "email": "abc.testr@web.de",
-      "motorcycleId": 5,
-      "appointmentId": null
-    },
-    {
-      "id": 17,
-      "firstName": "Maxi",
-      "lastName": "Musterfrau",
-      "gender": "female",
-      "email": "max.musermann@gmail.com",
-      "phoneNumber": "004912345978",
-      "motorcycleId": 4,
-      "appointmentId": null
-    },
-    {
-      "id": 18,
-      "firstName": "Hans",
-      "lastName": "Peter",
-      "gender": "male",
-      "email": "h.p@gmx.com",
-      "phoneNumber": "004911111111",
-      "motorcycleId": 3,
-      "appointmentId": null
-    },
-    {
-      "id": 19,
-      "firstName": "Gernot",
-      "lastName": "Hans",
-      "gender": "male",
-      "email": "g.h@gmx.com",
-      "phoneNumber": "00491144511",
-      "motorcycleId": 2,
-      "appointmentId": null
-    },
-    {
-      "id": 20,
-      "firstName": "Dame",
-      "lastName": "Frau",
-      "gender": "female",
-      "email": "d.f@gmx.com",
-      "phoneNumber": "00331144511",
-      "motorcycleId": 1,
-      "appointmentId": null
-    },
-    {
       "id": 1,
       "firstName": "Max",
       "lastName": "Mustermann",
@@ -341,6 +291,56 @@
       "phoneNumber": "004983381111",
       "motorcycleId": 6,
       "appointmentId": 15
+    },
+    {
+      "id": 16,
+      "firstName": "Abc",
+      "lastName": "Tester",
+      "gender": "other",
+      "phoneNumber": "004312345582",
+      "email": "abc.testr@web.de",
+      "motorcycleId": 5,
+      "appointmentId": null
+    },
+    {
+      "id": 17,
+      "firstName": "Maxi",
+      "lastName": "Musterfrau",
+      "gender": "female",
+      "email": "max.musermann@gmail.com",
+      "phoneNumber": "004912345978",
+      "motorcycleId": 4,
+      "appointmentId": null
+    },
+    {
+      "id": 18,
+      "firstName": "Hans",
+      "lastName": "Peter",
+      "gender": "male",
+      "email": "h.p@gmx.com",
+      "phoneNumber": "004911111111",
+      "motorcycleId": 3,
+      "appointmentId": null
+    },
+    {
+      "id": 19,
+      "firstName": "Gernot",
+      "lastName": "Hans",
+      "gender": "male",
+      "email": "g.h@gmx.com",
+      "phoneNumber": "00491144511",
+      "motorcycleId": 2,
+      "appointmentId": null
+    },
+    {
+      "id": 20,
+      "firstName": "Dame",
+      "lastName": "Frau",
+      "gender": "female",
+      "email": "d.f@gmx.com",
+      "phoneNumber": "00331144511",
+      "motorcycleId": 1,
+      "appointmentId": null
     }
   ],
   "appointments": [
