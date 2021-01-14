@@ -62,13 +62,13 @@ export class CustomerEditComponent implements OnInit {
     });
 
     this.customerForm = this.formBuilder.group({
-      firstName:['', {updateOn: 'change'}],
-      lastName:['', {updateOn: 'change'}],
-      gender:['', {updateOn: 'change'}],
-      phoneNumber:['', {updateOn: 'change'}],
-      email:['', {updateOn: 'change'}],
-      motorcycleId:['', {updateOn: 'change'}],
-      appointmentId:['', {updateOn: 'change'}]
+      firstName:[this.customer.firstName, {updateOn: 'change'}],
+      lastName:[this.customer.lastName, {updateOn: 'change'}],
+      gender:[this.customer.gender, {updateOn: 'change'}],
+      phoneNumber:[this.customer.phoneNumber, {updateOn: 'change'}],
+      email:[this.customer.email, {updateOn: 'change'}],
+      motorcycleId:[this.customer.motorcycleId, {updateOn: 'change'}],
+      appointmentId:[this.customer.appointmentId, {updateOn: 'change'}]
     });
   }
 

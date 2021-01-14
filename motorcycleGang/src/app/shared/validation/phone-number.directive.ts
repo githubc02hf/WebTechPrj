@@ -15,7 +15,7 @@ export class PhoneNumberDirective implements Validator{
   constructor() { }
 
   validate(control: AbstractControl) : ValidationErrors | null {
-    if (control.value && control.value.length >= 10 || control.value.length <= 4) {
+    if (control.value && isNaN(control.value) && control.value.length >= 10 || control.value.length <= 4) {
       return { 
         phoneNumber: {
           actualPhoneNumber: control.value

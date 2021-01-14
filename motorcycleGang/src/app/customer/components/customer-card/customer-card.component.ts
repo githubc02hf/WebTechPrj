@@ -25,7 +25,7 @@ export class CustomerCardComponent implements OnInit {
     this.dialogService.openConfirmDialog("Are you sure to delete this record permanently?").afterClosed().subscribe(res =>{
       if(res){
         this.customerService.deleteCustomer(this.customer);
-        console.log(this.customer + " deleted")
+        //console.log(this.customer + " deleted")
       }
     });
   }
