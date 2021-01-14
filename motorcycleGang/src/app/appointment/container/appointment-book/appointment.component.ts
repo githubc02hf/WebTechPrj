@@ -27,7 +27,7 @@ export class AppointmentComponent implements OnInit {
     this.customerService.getCustomers()
       .subscribe(customers => {
         this.customers = customers.filter(function(customer) {
-          return customer.appointmentId === 0;
+          return customer.appointmentId === null;
         })
       });
   }
