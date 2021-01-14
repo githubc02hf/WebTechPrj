@@ -89,6 +89,8 @@ export class AppointmentComponent implements OnInit {
     const appointment = new Appointment();
 
     appointment.id = this.isEdit ? this.appointmentToEdit.id : 0;
+    appointment.firstName = this.appointmentForm.get('firstName').value;
+    appointment.lastName = this.appointmentForm.get('lastName').value;
     appointment.customer = this.appointmentForm.get('customer').value;
     const formattedDate = formatDate(this.appointmentForm.get('date').value, 'MM/dd/yyyy', 'en-US');
     appointment.preferredDate = formattedDate;
@@ -125,7 +127,6 @@ export class AppointmentComponent implements OnInit {
     this.customers[0] = appointmentToEdit.customer;
     this.appointmentForm.controls["customer"].setValue(this.customers[0], {onlySelf: true});
     this.appointmentForm.get('customer').disable();
-    //this.appointmentForm.get('customer').setValue([appointmentToEdit.customer]);
     this.appointmentForm.get('firstName').setValue(appointmentToEdit.customer.firstName);
     this.appointmentForm.get('lastName').setValue(appointmentToEdit.customer.lastName);
     this.appointmentForm.get('gender').setValue(appointmentToEdit.customer.gender);

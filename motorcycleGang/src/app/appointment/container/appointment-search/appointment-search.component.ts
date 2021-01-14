@@ -30,7 +30,7 @@ export class AppointmentSearchComponent implements OnInit {
       .subscribe(
         appointments => {
           this.appointmentList = appointments;
-          this.appointmentList.sort
+          this.sortAppointments(this.appointmentList);
         },
         err => {
           console.error('Error getting appointment', err);
@@ -44,7 +44,22 @@ export class AppointmentSearchComponent implements OnInit {
       return;
     }
     this.appointmentList = this.appointmentService.getMatchingAppointmentsFromList(this.searchFieldInput);
-  };
+    this.sortAppointments(this.appointmentList);
+  }
+
+  sortAppointments(appointmentList) {
+    appointmentList.sort((a, b) => {
+      if (a.id < b.id) {
+        return -1;
+      }
+      if (a.id > a.id) {
+        return 1;
+      }
+      return 0;
+     })
+  }
+
+  
 
   selectAppointment(row) {
     if(this.selectedRowIndex === row.id) {

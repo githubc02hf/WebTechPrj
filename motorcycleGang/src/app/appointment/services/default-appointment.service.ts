@@ -37,7 +37,7 @@ export class DefaultAppointmentService implements AppointmentService {
         Object.keys(appointment)
           .some(prop => appointment[prop].toString().toLowerCase().indexOf(termLowerCase) !== -1)
     }
-    var newAppointmentList = this.appointmentList
+    var newAppointmentList = this.appointmentList.filter(filterBy(pattern));
     return newAppointmentList;
   };
 
