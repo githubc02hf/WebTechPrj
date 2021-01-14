@@ -1,14 +1,17 @@
 # WebTechPrj
 Project for FH Campus 02 Graz course: "Web Technologien"
 
-**Project:**
+**Project:** 
 Motorcycle Gang
 
-**Collaborators**:
+**Collaborators**
 
 - Ivica Budimir _[Entity: Appointment]_ <br>
 - Henrik Funke _[Entity: Customer]_ <br>
 - Patrick Khair _[Entity: Motorcycle]_
+
+**UI component library:** 
+Angular Material UI (https://material.angular.io/)
 
 ---
 

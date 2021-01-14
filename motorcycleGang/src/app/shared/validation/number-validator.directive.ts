@@ -19,7 +19,7 @@ export class NumberValidatorDirective implements Validator {
 
   validate(control: AbstractControl): ValidationErrors | null {
 
-    if (control.value && isNaN(control.value)) {
+    if (control.value && (isNaN(control.value) || control.value <= 0)) {
       return {
         number: {
           actualNumber: control.value
