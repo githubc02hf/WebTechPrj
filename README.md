@@ -6,9 +6,9 @@ Motorcycle Gang
 
 **Collaborators**:
 
-Ivica Budimir _[Entity: Appointment]_ <br>
-Henrik Funke _[Entity: Customer]_ <br>
-Patrick Khair _[Entity: Motorcycle]_
+- Ivica Budimir _[Entity: Appointment]_ <br>
+- Henrik Funke _[Entity: Customer]_ <br>
+- Patrick Khair _[Entity: Motorcycle]_
 
 ---
 
