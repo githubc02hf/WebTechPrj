@@ -78,7 +78,18 @@
       "horsepower": 120
     }
   ],
-  "customer": [
+
+  "customer": [ 
+    {
+      "id": 1,
+      "firstName": "Max",
+      "lastName": "Mustermann",
+      "gender": "male",
+      "email": "max.mustermann@gmail.com",
+      "phoneNumber": "43534545",
+      "motorcycleId": 6,
+      "appointmentId": 2
+    },
     {
       "id": 2,
       "firstName": "Jane",
@@ -87,21 +98,11 @@
       "email": "ja.doe@gmx.com",
       "phoneNumber": "004988881111",
       "motorcycleId": 5,
-      "appointmentId": 1
-    },
-    {
-      "id": 4,
-      "firstName": "Ingo",
-      "lastName": "Pfister",
-      "gender": "male",
-      "phoneNumber": "067645353",
-      "email": "test@live.at",
-      "motorcycleId": 1,
-      "appointmentId": 1
+      "appointmentId": 0
     },
     {
       "id": 3,
-      "firstName": "Jack",
+      "firstName": "John",
       "lastName": "Doe",
       "gender": "male",
       "phoneNumber": "12345582",
@@ -110,26 +111,17 @@
       "appointmentId": 1
     },
     {
-      "id": 5,
-      "firstName": "Päti",
-      "lastName": "Celsius",
-      "gender": "male",
-      "phoneNumber": "0893248",
-      "email": "teest@live",
+      "id": 4,
+      "firstName": "bike",
+      "lastName": "lover",
+      "gender": "other",
+      "phoneNumber": "067645353",
+      "email": "bikeLover1337@gamil.com",
       "motorcycleId": 2,
-      "appointmentId": 1
-    },
-    {
-      "id": 10,
-      "firstName": "Yamaha",
-      "lastName": "dssr",
-      "gender": "male",
-      "phoneNumber": "43534545",
-      "email": "blue@df",
-      "motorcycleId": 6,
-      "appointmentId": 11
+      "appointmentId": 0
     }
   ],
+
   "appointments": [
     {
       "id": 1,
@@ -147,154 +139,19 @@
       "issue": "safety inspection"
     },
     {
-      "id": 3,
-      "customer": {
-        "id": 5,
-        "firstName": "Päti",
-        "lastName": "Celsius",
-        "gender": "male",
-        "phoneNumber": "0893248",
-        "email": "teest@live",
-        "motorcycleId": 2,
-        "appointmentId": 1
-      },
-      "preferredDate": "01/13/2021",
-      "issue": "safety inspection"
-    },
-    {
-      "id": 4,
-      "customer": {
-        "id": 6,
-        "firstName": "Yamaha",
-        "lastName": "dssr",
-        "gender": "male",
-        "phoneNumber": "43534545",
-        "email": "blue@df",
-        "motorcycleId": 6,
-        "appointmentId": 0
-      },
-      "preferredDate": "01/13/2021",
-      "issue": "repair"
-    },
-    {
-      "id": 5,
-      "customer": {
-        "id": 6,
-        "firstName": "Yamaha",
-        "lastName": "dssr",
-        "gender": "male",
-        "phoneNumber": "43534545",
-        "email": "blue@df",
-        "motorcycleId": 6,
-        "appointmentId": 0
-      },
-      "preferredDate": "01/13/2021",
-      "issue": "safety inspection"
-    },
-    {
-      "id": 6,
-      "customer": {
-        "id": 6,
-        "firstName": "Yamaha",
-        "lastName": "dssr",
-        "gender": "male",
-        "phoneNumber": "43534545",
-        "email": "blue@df",
-        "motorcycleId": 6,
-        "appointmentId": 0
-      },
-      "preferredDate": "01/13/2021",
-      "issue": "safety inspection"
-    },
-    {
-      "id": 7,
-      "customer": {
-        "id": 6,
-        "firstName": "Yamaha",
-        "lastName": "dssr",
-        "gender": "male",
-        "phoneNumber": "43534545",
-        "email": "blue@df",
-        "motorcycleId": 6,
-        "appointmentId": 0
-      },
-      "preferredDate": "01/13/2021",
-      "issue": "repair"
-    },
-    {
-      "id": 8,
-      "customer": {
-        "id": 6,
-        "firstName": "Yamaha",
-        "lastName": "dssr",
-        "gender": "male",
-        "phoneNumber": "43534545",
-        "email": "blue@df",
-        "motorcycleId": 6,
-        "appointmentId": 0
-      },
-      "preferredDate": "01/13/2021",
-      "issue": "repair"
-    },
-    {
-      "id": 9,
-      "customer": {
-        "id": 6,
-        "firstName": "Yamaha",
-        "lastName": "dssr",
-        "gender": "male",
-        "phoneNumber": "43534545",
-        "email": "blue@df",
-        "motorcycleId": 6,
-        "appointmentId": 0
-      },
-      "preferredDate": "01/13/2021",
-      "issue": "tire change"
-    },
-    {
-      "id": 10,
-      "customer": {
-        "id": 9,
-        "firstName": "Yamaha",
-        "lastName": "dssr",
-        "gender": "male",
-        "phoneNumber": "43534545",
-        "email": "blue@df",
-        "motorcycleId": 6,
-        "appointmentId": 0
-      },
-      "preferredDate": "01/13/2021",
-      "issue": "tire change"
-    },
-    {
-      "id": 11,
-      "customer": {
-        "id": 10,
-        "firstName": "Yamaha",
-        "lastName": "dssr",
-        "gender": "male",
-        "phoneNumber": "43534545",
-        "email": "blue@df",
-        "motorcycleId": 6,
-        "appointmentId": 0
-      },
-      "preferredDate": "01/13/2021",
-      "issue": "repair"
-    },
-    {
       "id": 2,
       "customer": {
-        "id": 4,
-        "firstName": "Ingo",
-        "lastName": "Pfister",
+        "id": 1,
+        "firstName": "Max",
+        "lastName": "Mustermann",
         "gender": "male",
-        "phoneNumber": "067645353",
-        "email": "test@live.at",
-        "motorcycleId": 1,
-        "appointmentId": 1
+        "email": "max.mustermann@gmail.com",
+        "phoneNumber": "43534545",
+        "motorcycleId": 6,
+        "appointmentId": 2
       },
-      "preferredDate": "01/14/2021",
-      "issue": "tire change"
+      "preferredDate": "26/07/2021",
+      "issue": "repair"
     }
   ]
 }
